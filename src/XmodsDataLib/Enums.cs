@@ -124,7 +124,8 @@ namespace Xmods.DataLib
             Dog = 2,
             Cat = 3,
             LittleDog = 4,
-            Werewolf = 5
+            Fox = 5,
+            Horse = 6
         }
 
         public enum ClothingType        // used in TS3
@@ -1349,12 +1350,25 @@ namespace Xmods.DataLib
             BirthmarkTorsoBack = 0x5C,
             BirthmarkTorsoFront = 0x5D,
             BirthmarkArms = 0x5E,
-            Unknown5 = 0x5F,
-            Unknown6 = 0x60,
-            Unknown7 = 0x61,
-            BirthmarkLegs = 0x62,
-            StretchmarksFront = 0x63,
-            StretchmarksBack = 0x64
+            MoleFace,
+            MoleChestUpper,
+            MoleBackUpper,
+            BirthmarkLegs,
+            StretchMarksFront,
+            StretchMarksBack,
+
+
+            Saddle,
+            Bridle,
+            Reins,
+            Blanket,
+            SkinDetailHoofColor,
+            HairMane,
+            HairTail,
+            HairForelock,
+            HairFeathers,
+            Horn,
+            TailBase,
         }
 
          public enum BodySubType

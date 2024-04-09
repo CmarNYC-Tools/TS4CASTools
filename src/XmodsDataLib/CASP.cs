@@ -116,12 +116,13 @@ namespace Xmods.DataLib
         byte specularIndex;   // DDSRLES 
         uint UVoverride;      //added in version 0x1b, so far same values as bodyType
         byte emissionIndex;   // added in version 0x1d, for alien glow 
-        byte reserved;        // added in version 0x2A
+        byte blendGeometryIndex;        // added in version 0x2A
+        byte colorShiftMaskIndex;   // added in version 0x31, for masking color shifts
         byte IGTcount;        // Resource reference table in I64GT format (not TGI64)
                               // --repeat(count)
         TGI[] IGTtable;
 
-        uint currentVersion = 0x2E;
+        uint currentVersion = 0x31;
 
         public bool UpdateToLatestVersion()
         {
@@ -179,7 +180,7 @@ namespace Xmods.DataLib
             }
             if (version < 42)
             {
-                reserved = 0;
+                blendGeometryIndex = 0;
             }
             if (version < 43)
             {
@@ -195,6 +196,10 @@ namespace Xmods.DataLib
             if (this.version < 0x2E)
             {
                 this.hairColorKeys = new byte[0];
+            }
+            if(this.version < 0x31)
+            {
+                colorShiftMaskIndex = (byte)this.EmptyLink;
             }
 
             if (legacyCompatible)
@@ -805,6 +810,11 @@ namespace Xmods.DataLib
             get { if (this.version >= 30) { return this.emissionIndex; } else { return (byte)this.EmptyLink; } }
             set { this.emissionIndex = (byte)value; }
         }
+        public byte ColorShiftMaskIndex
+        {
+            get { if (this.version >= 0x31) { return this.colorShiftMaskIndex; } else { return (byte)this.EmptyLink; } }
+            set { this.colorShiftMaskIndex = (byte)value; }
+        }
 
         public void RemoveSpecular()
         {
@@ -814,6 +824,11 @@ namespace Xmods.DataLib
         public void RemoveEmission()
         {
             this.emissionIndex = RemoveKey(this.emissionIndex);
+            this.RebuildLinkList();
+        }
+        public void RemoveColorShiftMask()
+        {
+            this.colorShiftMaskIndex = RemoveKey(this.colorShiftMaskIndex);
             this.RebuildLinkList();
         }
 
@@ -999,7 +1014,10 @@ namespace Xmods.DataLib
             }
             if (version >= 42)
             {
-                reserved = br.ReadByte();
+                blendGeometryIndex = br.ReadByte();
+            }
+            if(version >= 0x31){
+                colorShiftMaskIndex = br.ReadByte();
             }
             IGTcount = br.ReadByte();
             IGTtable = new TGI[IGTcount];
@@ -1143,7 +1161,10 @@ namespace Xmods.DataLib
             }
             if (version >= 42)
             {
-                bw.Write(reserved);
+                bw.Write(blendGeometryIndex);
+            }
+            if(version >= 0x31){
+                bw.Write(colorShiftMaskIndex);
             }
             long tablePos = bw.BaseStream.Position;
             bw.BaseStream.Position = offsetPos;
@@ -1526,6 +1547,7 @@ namespace Xmods.DataLib
             this.normalMapIndex = AddLink(this.normalMapIndex, newLinks);
             this.specularIndex = AddLink(this.specularIndex, newLinks);
             this.emissionIndex = AddLink(this.emissionIndex, newLinks);
+            this.colorShiftMaskIndex = AddLink(this.colorShiftMaskIndex, newLinks);
             this.IGTtable = newLinks.ToArray();
         }
 
