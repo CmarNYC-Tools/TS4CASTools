@@ -1,0 +1,49 @@
+{
+    "version": "2.0.0",
+    "options": {
+        "env": {
+            "CAS_TOOLS_VERSION":"3.8.2.1"
+        }
+    },
+    "tasks": [
+        {
+            "label": "buildn",
+            "options": { "statusbar": {"hide": true}},
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/src/CASTools/S4CASTools.NET.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build",
+            "options": { "statusbar": {"hide": true}},
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/src/CASTools/S4CASTools.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "publish",
+            "options": { "statusbar": {"hide": false}},
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/src/CASTools/S4CASTools.csproj",
+                "-c:Release"
+            ],
+            "problemMatcher": "$msCompile"
+        }
+    
+    ]
+}

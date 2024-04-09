@@ -1,11 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net4.8</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <PlatformTarget>x64</PlatformTarget>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <RootNamespace>XMODS</RootNamespace>
     <AssemblyName>S4CASTools</AssemblyName>
     <UseWindowsForms>true</UseWindowsForms>
@@ -31,6 +30,8 @@
     <NeutralLanguage>en</NeutralLanguage>
     <Description></Description>
     <Copyright>Copyright ©  2014</Copyright>
+
+    <DefineConstants>$(DefineConstants);NETCORE</DefineConstants>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
@@ -83,13 +84,11 @@
     <PackageReference Include="Ookii.Dialogs.Wpf" Version="5.0.1" />
     <PackageReference Include="System.IO.Compression" Version="4.3.0" />
     <PackageReference Include="System.Resources.Extensions" Version="5.0.0" />
+    <PackageReference Include="WinForms.DataVisualization" Version="1.9.2" />
+    <PackageReference Include="System.Management" Version="8.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\XmodsDataLib\XmodsDataLib.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System.Windows.Forms.DataVisualization" />
-    <Reference Include="System.Management" />
+    <ProjectReference Include="..\XmodsDataLib\XmodsDataLib.NET.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Form1.designer - Copy.cs"/>
