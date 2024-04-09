@@ -1,0 +1,976 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="empty_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\empty_image.dds;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NullImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NullImage.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="blankBumpSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\blankBumpSmall.dds;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BlankShadow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BlankShadow.rle2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="blankBump" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\blankBump.dds;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BlankSpecular" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BlankSpecular.rles;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FemaleUnderwear" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FemaleUnderwear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ChildUnderwear" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChildUnderwear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MaleUnderwear" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MaleUnderwear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FemaleSkin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FemaleSkin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ChildSkin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChildSkin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MaleSkin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MaleSkin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="yfHairReference" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yfHairReference.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cuBottom_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cuBottom_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cuBottom_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cuBottom_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cuBottom_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cuBottom_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cuBottom_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cuBottom_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cuTop_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cuTop_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cuTop_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cuTop_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cuTop_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cuTop_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cuTop_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cuTop_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="puBottom_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\puBottom_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="puBottom_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\puBottom_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="puBottom_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\puBottom_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="puBottom_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\puBottom_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="puTop_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\puTop_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="puTop_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\puTop_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="puTop_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\puTop_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="puTop_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\puTop_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yfBottom_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yfBottom_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yfBottom_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yfBottom_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yfBottom_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yfBottom_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yfBottom_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yfBottom_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yfTop_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yfTop_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yfTop_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yfTop_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yfTop_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yfTop_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yfTop_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yfTop_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ymBottom_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ymBottom_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ymBottom_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ymBottom_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ymBottom_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ymBottom_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ymBottom_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ymBottom_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ymTop_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ymTop_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ymTop_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ymTop_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ymTop_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ymTop_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ymTop_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ymTop_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cuHead_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cuHead_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cuHead_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cuHead_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cuHead_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cuHead_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cuHead_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cuHead_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cuShoes_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cuShoes_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cuShoes_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cuShoes_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cuShoes_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cuShoes_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cuShoes_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cuShoes_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="puHead_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\puHead_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="puHead_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\puHead_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="puHead_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\puHead_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="puHead_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\puHead_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="puShoes_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\puShoes_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="puShoes_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\puShoes_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="puShoes_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\puShoes_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="puShoes_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\puShoes_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yfHead_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yfHead_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yfHead_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yfHead_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yfHead_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yfHead_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yfHead_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yfHead_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yfShoes_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yfShoes_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yfShoes_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yfShoes_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yfShoes_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yfShoes_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yfShoes_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yfShoes_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ymHead_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ymHead_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ymHead_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ymHead_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ymHead_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ymHead_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ymHead_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ymHead_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ymShoes_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ymShoes_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ymShoes_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ymShoes_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ymShoes_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ymShoes_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ymShoes_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ymShoes_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cuBody_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cuBody_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cuBody_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cuBody_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cuBody_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cuBody_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cuBody_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cuBody_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="puBody_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\puBody_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="puBody_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\puBody_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="puBody_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\puBody_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="puBody_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\puBody_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yfBody_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yfBody_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yfBody_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yfBody_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yfBody_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yfBody_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yfBody_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yfBody_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ymBody_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ymBody_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ymBody_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ymBody_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ymBody_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ymBody_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ymBody_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ymBody_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="acBody_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\acBody_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="acBody_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\acBody_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="acBody_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\acBody_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="acBody_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\acBody_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="acHead_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\acHead_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="acHead_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\acHead_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="acHead_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\acHead_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="acHead_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\acHead_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="acShoes_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\acShoes_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="acShoes_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\acShoes_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="acShoes_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\acShoes_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="acTail_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\acTail_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="acTail_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\acTail_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="acTail_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\acTail_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="acTail_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\acTail_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adBody_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adBody_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adBody_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adBody_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adBody_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adBody_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adBody_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adBody_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adHead_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adHead_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adHead_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adHead_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adHead_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adHead_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adHead_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adHead_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adShoes_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adShoes_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adShoes_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adShoes_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adShoes_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adShoes_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adShoes_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adShoes_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adTail_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adTail_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adTail_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adTail_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adTail_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adTail_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adTail_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adTail_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alBody_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alBody_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alBody_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alBody_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alBody_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alBody_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alBody_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alBody_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alHead_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alHead_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alHead_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alHead_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alHead_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alHead_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alHead_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alHead_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alShoes_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alShoes_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alShoes_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alShoes_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alShoes_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alShoes_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alShoes_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alShoes_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alTail_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alTail_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alTail_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alTail_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alTail_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alTail_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alTail_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alTail_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ccBody_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ccBody_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ccBody_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ccBody_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ccBody_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ccBody_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ccBody_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ccBody_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ccHead_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ccHead_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ccHead_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ccHead_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ccHead_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ccHead_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ccHead_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ccHead_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ccShoes_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ccShoes_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ccShoes_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ccShoes_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ccShoes_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ccShoes_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ccShoes_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ccShoes_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ccTail_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ccTail_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ccTail_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ccTail_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ccTail_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ccTail_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ccTail_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ccTail_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdBody_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdBody_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdBody_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdBody_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdBody_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdBody_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdBody_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdBody_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdHead_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdHead_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdHead_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdHead_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdHead_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdHead_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdHead_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdHead_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdShoes_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdShoes_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdShoes_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdShoes_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdShoes_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdShoes_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdShoes_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdShoes_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdTail_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdTail_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdTail_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdTail_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdTail_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdTail_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdTail_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdTail_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="acShoes_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\acShoes_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="acEarsUp_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\acEarsUp_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="acEarsUp_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\acEarsUp_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="acEarsUp_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\acEarsUp_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="acEarsUp_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\acEarsUp_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adEarsUp_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adEarsUp_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adEarsUp_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adEarsUp_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adEarsUp_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adEarsUp_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adEarsUp_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adEarsUp_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alEarsUp_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alEarsUp_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alEarsUp_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alEarsUp_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alEarsUp_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alEarsUp_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alEarsUp_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alEarsUp_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ccEarsUp_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ccEarsUp_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ccEarsUp_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ccEarsUp_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ccEarsUp_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ccEarsUp_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ccEarsUp_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ccEarsUp_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdEarsUp_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdEarsUp_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdEarsUp_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdEarsUp_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdEarsUp_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdEarsUp_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdEarsUp_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdEarsUp_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="acEarsDown_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\acEarsDown_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="acEarsDown_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\acEarsDown_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="acEarsDown_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\acEarsDown_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="acEarsDown_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\acEarsDown_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="acTailStub_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\acTailStub_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="acTailStub_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\acTailStub_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="acTailStub_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\acTailStub_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="acTailStub_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\acTailStub_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adEarsDown_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adEarsDown_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adEarsDown_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adEarsDown_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adEarsDown_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adEarsDown_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adEarsDown_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adEarsDown_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adTailRing_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adTailRing_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adTailRing_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adTailRing_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adTailRing_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adTailRing_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adTailRing_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adTailRing_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adTailScrew_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adTailScrew_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adTailScrew_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adTailScrew_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adTailScrew_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adTailScrew_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adTailScrew_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adTailScrew_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adTailStub_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adTailStub_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adTailStub_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adTailStub_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adTailStub_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adTailStub_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adTailStub_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adTailStub_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alEarsDown_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alEarsDown_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alEarsDown_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alEarsDown_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alEarsDown_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alEarsDown_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alEarsDown_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alEarsDown_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alTailRing_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alTailRing_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alTailRing_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alTailRing_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alTailRing_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alTailRing_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alTailRing_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alTailRing_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alTailScrew_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alTailScrew_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alTailScrew_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alTailScrew_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alTailScrew_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alTailScrew_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alTailScrew_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alTailScrew_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alTailStub_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alTailStub_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alTailStub_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alTailStub_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alTailStub_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alTailStub_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alTailStub_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alTailStub_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ccEarsDown_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ccEarsDown_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ccEarsDown_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ccEarsDown_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ccEarsDown_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ccEarsDown_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ccEarsDown_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ccEarsDown_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ccTailStub_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ccTailStub_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ccTailStub_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ccTailStub_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ccTailStub_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ccTailStub_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ccTailStub_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ccTailStub_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdEarsDown_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdEarsDown_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdEarsDown_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdEarsDown_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdEarsDown_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdEarsDown_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdEarsDown_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdEarsDown_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdTailRing_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdTailRing_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdTailRing_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdTailRing_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdTailRing_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdTailRing_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdTailRing_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdTailRing_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdTailScrew_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdTailScrew_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdTailScrew_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdTailScrew_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdTailScrew_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdTailScrew_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdTailScrew_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdTailScrew_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdTailStub_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdTailStub_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdTailStub_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdTailStub_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdTailStub_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdTailStub_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cdTailStub_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cdTailStub_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="blankBump_hat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\blankBump_hat.dds;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="blankBump_necklace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\blankBump_necklace.dds;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="blankBump_pet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\blankBump_pet.dds;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="blankBump_shoes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\blankBump_shoes.dds;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BlankShadow_pet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BlankShadow_pet.rle2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BlankSpecular_pet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BlankSpecular_pet.rles;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatSkin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CatSkin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DogSkin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DogSkin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cuSkirt_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cuSkirt_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cuSkirt_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cuSkirt_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cuSkirt_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cuSkirt_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cuSkirt_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cuSkirt_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yfSkirt_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yfSkirt_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yfSkirt_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yfSkirt_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yfSkirt_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yfSkirt_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yfSkirt_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yfSkirt_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yfTail_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yfTail_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yfTail_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yfTail_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yfTail_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yfTail_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yfTail_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yfTail_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ymSkirt_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ymSkirt_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ymSkirt_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ymSkirt_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ymSkirt_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ymSkirt_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ymSkirt_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ymSkirt_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ymTail_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ymTail_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ymTail_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ymTail_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ymTail_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ymTail_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ymTail_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ymTail_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

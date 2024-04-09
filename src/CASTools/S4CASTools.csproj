@@ -1,0 +1,830 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{231109B3-2AF4-4AA2-A952-C519A4CCD663}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XMODS</RootNamespace>
+    <AssemblyName>S4CASTools</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <ProductName>MeshTools</ProductName>
+    <PublisherName>cmarNYC</PublisherName>
+    <SuiteName>MeshTools</SuiteName>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>3.8.2.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>false</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>A4021F63CF5CFBBB6B1D8D2B5695F37B16EA44F0</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>MeshCloner_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationIcon>iconwhite2.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DDSPanel, Version=2103.4.1511.18344, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\s4pi Library\DDSPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Ookii.Dialogs">
+      <HintPath>F:\OokiiDialogs\Ookii.Dialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="s4pi.ImageResource, Version=2104.21.1540.19202, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\s4pi Library\s4pi.ImageResource.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.Interfaces, Version=2105.15.749.5092, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\s4pi Library\s4pi.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.Package, Version=2103.4.1511.18343, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\s4pi Library\s4pi.Package.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.Settings">
+      <HintPath>F:\s4pi Library\s4pi.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Custom, Version=2105.15.749.5091, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\s4pi Library\System.Custom.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="XmodsDataLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\XmodsDataLib\XmodsDataLib\bin\Release\XmodsDataLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Autotools.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CASPartPreviewer.xaml.cs">
+      <DependentUpon>CASPartPreviewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ClonePackProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClonePackThumbnails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cloner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColladaTools.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GEOMviewer.xaml.cs">
+      <DependentUpon>GEOMviewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreatorPrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreatorPrompt.Designer.cs">
+      <DependentUpon>CreatorPrompt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FNVhashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FNVhashForm.Designer.cs">
+      <DependentUpon>FNVhashForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GEOMtools.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GEOMDataDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GEOMDataDisplay.designer.cs">
+      <DependentUpon>GEOMDataDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GEOMFacesDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GEOMFacesDisplay.designer.cs">
+      <DependentUpon>GEOMFacesDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageDisplayImportExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageDisplayImportExport.Designer.cs">
+      <DependentUpon>ImageDisplayImportExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapResizer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapResizer.Designer.cs">
+      <DependentUpon>MapResizer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MeshConversions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MeshImportOptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MeshImportOptionsForm.Designer.cs">
+      <DependentUpon>MeshImportOptionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MeshLodRegionAssignmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MeshLodRegionAssignmentForm.Designer.cs">
+      <DependentUpon>MeshLodRegionAssignmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MeshMultipartConversionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MeshMultipartConversionForm.Designer.cs">
+      <DependentUpon>MeshMultipartConversionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MS3DFacesDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MS3DFacesDisplay.designer.cs">
+      <DependentUpon>MS3DFacesDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MS3Dtools.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MS3DVertexDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MS3DVertexDisplay.designer.cs">
+      <DependentUpon>MS3DVertexDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherTools.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClonePackMeshes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PackageTools.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PreviewerControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RenumberSortOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RenumberSortOrder.Designer.cs">
+      <DependentUpon>RenumberSortOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RigTools.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="SlotRayDataDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SlotRayDataDisplay.Designer.cs">
+      <DependentUpon>SlotRayDataDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StitchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StitchForm.designer.cs">
+      <DependentUpon>StitchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UVStitchChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UVStitchChart.designer.cs">
+      <DependentUpon>UVStitchChart.cs</DependentUpon>
+    </Compile>
+    <Content Include="acSlotRayData.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="adSlotRayData.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="alSlotRayData.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ccSlotRayData.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="cdSlotRayData.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chSlotRayData.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DMapList.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ihSlotRayData.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ModifierList.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Packs.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="CreatorPrompt.resx">
+      <DependentUpon>CreatorPrompt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FNVhashForm.resx">
+      <DependentUpon>FNVhashForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GEOMDataDisplay.resx">
+      <DependentUpon>GEOMDataDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GEOMFacesDisplay.resx">
+      <DependentUpon>GEOMFacesDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageDisplayImportExport.resx">
+      <DependentUpon>ImageDisplayImportExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapResizer.resx">
+      <DependentUpon>MapResizer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MeshImportOptionsForm.resx">
+      <DependentUpon>MeshImportOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MeshLodRegionAssignmentForm.resx">
+      <DependentUpon>MeshLodRegionAssignmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MeshMultipartConversionForm.resx">
+      <DependentUpon>MeshMultipartConversionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MS3DFacesDisplay.resx">
+      <DependentUpon>MS3DFacesDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MS3DVertexDisplay.resx">
+      <DependentUpon>MS3DVertexDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RenumberSortOrder.resx">
+      <DependentUpon>RenumberSortOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SlotRayDataDisplay.resx">
+      <DependentUpon>SlotRayDataDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StitchForm.resx">
+      <DependentUpon>StitchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UVStitchChart.resx">
+      <DependentUpon>UVStitchChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="MeshCloner_TemporaryKey.pfx" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\acBody_lod0.simgeom" />
+    <None Include="Resources\acBody_lod1.simgeom" />
+    <None Include="Resources\acBody_lod2.simgeom" />
+    <None Include="Resources\acBody_lod3.simgeom" />
+    <None Include="Resources\acEarsDown_lod0.simgeom" />
+    <None Include="Resources\acEarsDown_lod1.simgeom" />
+    <None Include="Resources\acEarsDown_lod2.simgeom" />
+    <None Include="Resources\acEarsDown_lod3.simgeom" />
+    <None Include="Resources\acEarsUp_lod0.simgeom" />
+    <None Include="Resources\acEarsUp_lod1.simgeom" />
+    <None Include="Resources\acEarsUp_lod2.simgeom" />
+    <None Include="Resources\acEarsUp_lod3.simgeom" />
+    <None Include="Resources\acEars_lod0.simgeom" />
+    <None Include="Resources\acEars_lod1.simgeom" />
+    <None Include="Resources\acEars_lod2.simgeom" />
+    <None Include="Resources\acEars_lod3.simgeom" />
+    <None Include="Resources\acHead_lod0.simgeom" />
+    <None Include="Resources\acHead_lod1.simgeom" />
+    <None Include="Resources\acHead_lod2.simgeom" />
+    <None Include="Resources\acHead_lod3.simgeom" />
+    <None Include="Resources\acShoes_lod.simgeom" />
+    <None Include="Resources\acShoes_lod0.simgeom" />
+    <None Include="Resources\acShoes_lod1.simgeom" />
+    <None Include="Resources\acShoes_lod2.simgeom" />
+    <None Include="Resources\acShoes_lod3.simgeom" />
+    <None Include="Resources\acTailStub_lod0.simgeom" />
+    <None Include="Resources\acTailStub_lod1.simgeom" />
+    <None Include="Resources\acTailStub_lod2.simgeom" />
+    <None Include="Resources\acTailStub_lod3.simgeom" />
+    <None Include="Resources\acTail_lod0.simgeom" />
+    <None Include="Resources\acTail_lod1.simgeom" />
+    <None Include="Resources\acTail_lod2.simgeom" />
+    <None Include="Resources\acTail_lod3.simgeom" />
+    <None Include="Resources\adBody_lod0.simgeom" />
+    <None Include="Resources\adBody_lod1.simgeom" />
+    <None Include="Resources\adBody_lod2.simgeom" />
+    <None Include="Resources\adBody_lod3.simgeom" />
+    <None Include="Resources\adEarsDown_lod0.simgeom" />
+    <None Include="Resources\adEarsDown_lod1.simgeom" />
+    <None Include="Resources\adEarsDown_lod2.simgeom" />
+    <None Include="Resources\adEarsDown_lod3.simgeom" />
+    <None Include="Resources\adEarsUp_lod0.simgeom" />
+    <None Include="Resources\adEarsUp_lod1.simgeom" />
+    <None Include="Resources\adEarsUp_lod2.simgeom" />
+    <None Include="Resources\adEarsUp_lod3.simgeom" />
+    <None Include="Resources\adEars_lod0.simgeom" />
+    <None Include="Resources\adEars_lod1.simgeom" />
+    <None Include="Resources\adEars_lod2.simgeom" />
+    <None Include="Resources\adEars_lod3.simgeom" />
+    <None Include="Resources\adHead_lod0.simgeom" />
+    <None Include="Resources\adHead_lod1.simgeom" />
+    <None Include="Resources\adHead_lod2.simgeom" />
+    <None Include="Resources\adHead_lod3.simgeom" />
+    <None Include="Resources\adShoes_lod0.simgeom" />
+    <None Include="Resources\adShoes_lod1.simgeom" />
+    <None Include="Resources\adShoes_lod2.simgeom" />
+    <None Include="Resources\adShoes_lod3.simgeom" />
+    <None Include="Resources\adTailRing_lod0.simgeom" />
+    <None Include="Resources\adTailRing_lod1.simgeom" />
+    <None Include="Resources\adTailRing_lod2.simgeom" />
+    <None Include="Resources\adTailRing_lod3.simgeom" />
+    <None Include="Resources\adTailScrew_lod0.simgeom" />
+    <None Include="Resources\adTailScrew_lod1.simgeom" />
+    <None Include="Resources\adTailScrew_lod2.simgeom" />
+    <None Include="Resources\adTailScrew_lod3.simgeom" />
+    <None Include="Resources\adTailStub_lod0.simgeom" />
+    <None Include="Resources\adTailStub_lod1.simgeom" />
+    <None Include="Resources\adTailStub_lod2.simgeom" />
+    <None Include="Resources\adTailStub_lod3.simgeom" />
+    <None Include="Resources\adTail_lod0.simgeom" />
+    <None Include="Resources\adTail_lod1.simgeom" />
+    <None Include="Resources\adTail_lod2.simgeom" />
+    <None Include="Resources\adTail_lod3.simgeom" />
+    <None Include="Resources\alBody_lod0.simgeom" />
+    <None Include="Resources\alBody_lod1.simgeom" />
+    <None Include="Resources\alBody_lod2.simgeom" />
+    <None Include="Resources\alBody_lod3.simgeom" />
+    <None Include="Resources\alEarsDown_lod0.simgeom" />
+    <None Include="Resources\alEarsDown_lod1.simgeom" />
+    <None Include="Resources\alEarsDown_lod2.simgeom" />
+    <None Include="Resources\alEarsDown_lod3.simgeom" />
+    <None Include="Resources\alEarsUp_lod0.simgeom" />
+    <None Include="Resources\alEarsUp_lod1.simgeom" />
+    <None Include="Resources\alEarsUp_lod2.simgeom" />
+    <None Include="Resources\alEarsUp_lod3.simgeom" />
+    <None Include="Resources\alEars_lod0.simgeom" />
+    <None Include="Resources\alEars_lod1.simgeom" />
+    <None Include="Resources\alEars_lod2.simgeom" />
+    <None Include="Resources\alEars_lod3.simgeom" />
+    <None Include="Resources\alHead_lod0.simgeom" />
+    <None Include="Resources\alHead_lod1.simgeom" />
+    <None Include="Resources\alHead_lod2.simgeom" />
+    <None Include="Resources\alHead_lod3.simgeom" />
+    <None Include="Resources\alShoes_lod0.simgeom" />
+    <None Include="Resources\alShoes_lod1.simgeom" />
+    <None Include="Resources\alShoes_lod2.simgeom" />
+    <None Include="Resources\alShoes_lod3.simgeom" />
+    <None Include="Resources\alTailRing_lod0.simgeom" />
+    <None Include="Resources\alTailRing_lod1.simgeom" />
+    <None Include="Resources\alTailRing_lod2.simgeom" />
+    <None Include="Resources\alTailRing_lod3.simgeom" />
+    <None Include="Resources\alTailScrew_lod0.simgeom" />
+    <None Include="Resources\alTailScrew_lod1.simgeom" />
+    <None Include="Resources\alTailScrew_lod2.simgeom" />
+    <None Include="Resources\alTailScrew_lod3.simgeom" />
+    <None Include="Resources\alTailStub_lod0.simgeom" />
+    <None Include="Resources\alTailStub_lod1.simgeom" />
+    <None Include="Resources\alTailStub_lod2.simgeom" />
+    <None Include="Resources\alTailStub_lod3.simgeom" />
+    <None Include="Resources\alTail_lod0.simgeom" />
+    <None Include="Resources\alTail_lod1.simgeom" />
+    <None Include="Resources\alTail_lod2.simgeom" />
+    <None Include="Resources\alTail_lod3.simgeom" />
+    <None Include="Resources\blankBump.dds" />
+    <None Include="Resources\blankBumpSmall.dds" />
+    <None Include="Resources\BlankShadow.rle2" />
+    <None Include="Resources\BlankShadow_pet.rle2" />
+    <None Include="Resources\BlankSpecular.rles" />
+    <None Include="Resources\BlankSpecularSmall.dds" />
+    <None Include="Resources\BlankSpecularSmall.rle2" />
+    <None Include="Resources\BlankSpecular_pet.rles" />
+    <None Include="Resources\blank_shadow.dds" />
+    <None Include="Resources\blank_shadowSmall.dds" />
+    <None Include="Resources\ccBody_lod0.simgeom" />
+    <None Include="Resources\ccBody_lod1.simgeom" />
+    <None Include="Resources\ccBody_lod2.simgeom" />
+    <None Include="Resources\ccBody_lod3.simgeom" />
+    <None Include="Resources\ccEarsDown_lod0.simgeom" />
+    <None Include="Resources\ccEarsDown_lod1.simgeom" />
+    <None Include="Resources\ccEarsDown_lod2.simgeom" />
+    <None Include="Resources\ccEarsDown_lod3.simgeom" />
+    <None Include="Resources\ccEarsUp_lod0.simgeom" />
+    <None Include="Resources\ccEarsUp_lod1.simgeom" />
+    <None Include="Resources\ccEarsUp_lod2.simgeom" />
+    <None Include="Resources\ccEarsUp_lod3.simgeom" />
+    <None Include="Resources\ccEars_lod0.simgeom" />
+    <None Include="Resources\ccEars_lod1.simgeom" />
+    <None Include="Resources\ccEars_lod2.simgeom" />
+    <None Include="Resources\ccEars_lod3.simgeom" />
+    <None Include="Resources\ccHead_lod0.simgeom" />
+    <None Include="Resources\ccHead_lod1.simgeom" />
+    <None Include="Resources\ccHead_lod2.simgeom" />
+    <None Include="Resources\ccHead_lod3.simgeom" />
+    <None Include="Resources\ccShoes_lod0.simgeom" />
+    <None Include="Resources\ccShoes_lod1.simgeom" />
+    <None Include="Resources\ccShoes_lod2.simgeom" />
+    <None Include="Resources\ccShoes_lod3.simgeom" />
+    <None Include="Resources\ccTailStub_lod0.simgeom" />
+    <None Include="Resources\ccTailStub_lod1.simgeom" />
+    <None Include="Resources\ccTailStub_lod2.simgeom" />
+    <None Include="Resources\ccTailStub_lod3.simgeom" />
+    <None Include="Resources\ccTail_lod0.simgeom" />
+    <None Include="Resources\ccTail_lod1.simgeom" />
+    <None Include="Resources\ccTail_lod2.simgeom" />
+    <None Include="Resources\ccTail_lod3.simgeom" />
+    <None Include="Resources\cdBody_lod0.simgeom" />
+    <None Include="Resources\cdBody_lod1.simgeom" />
+    <None Include="Resources\cdBody_lod2.simgeom" />
+    <None Include="Resources\cdBody_lod3.simgeom" />
+    <None Include="Resources\cdEarsDown_lod0.simgeom" />
+    <None Include="Resources\cdEarsDown_lod1.simgeom" />
+    <None Include="Resources\cdEarsDown_lod2.simgeom" />
+    <None Include="Resources\cdEarsDown_lod3.simgeom" />
+    <None Include="Resources\cdEarsUp_lod0.simgeom" />
+    <None Include="Resources\cdEarsUp_lod1.simgeom" />
+    <None Include="Resources\cdEarsUp_lod2.simgeom" />
+    <None Include="Resources\cdEarsUp_lod3.simgeom" />
+    <None Include="Resources\cdEars_lod0.simgeom" />
+    <None Include="Resources\cdEars_lod1.simgeom" />
+    <None Include="Resources\cdEars_lod2.simgeom" />
+    <None Include="Resources\cdEars_lod3.simgeom" />
+    <None Include="Resources\cdHead_lod0.simgeom" />
+    <None Include="Resources\cdHead_lod1.simgeom" />
+    <None Include="Resources\cdHead_lod2.simgeom" />
+    <None Include="Resources\cdHead_lod3.simgeom" />
+    <None Include="Resources\cdShoes_lod0.simgeom" />
+    <None Include="Resources\cdShoes_lod1.simgeom" />
+    <None Include="Resources\cdShoes_lod2.simgeom" />
+    <None Include="Resources\cdShoes_lod3.simgeom" />
+    <None Include="Resources\cdTailRing_lod0.simgeom" />
+    <None Include="Resources\cdTailRing_lod1.simgeom" />
+    <None Include="Resources\cdTailRing_lod2.simgeom" />
+    <None Include="Resources\cdTailRing_lod3.simgeom" />
+    <None Include="Resources\cdTailScrew_lod0.simgeom" />
+    <None Include="Resources\cdTailScrew_lod1.simgeom" />
+    <None Include="Resources\cdTailScrew_lod2.simgeom" />
+    <None Include="Resources\cdTailScrew_lod3.simgeom" />
+    <None Include="Resources\cdTailStub_lod0.simgeom" />
+    <None Include="Resources\cdTailStub_lod1.simgeom" />
+    <None Include="Resources\cdTailStub_lod2.simgeom" />
+    <None Include="Resources\cdTailStub_lod3.simgeom" />
+    <None Include="Resources\cdTail_lod0.simgeom" />
+    <None Include="Resources\cdTail_lod1.simgeom" />
+    <None Include="Resources\cdTail_lod2.simgeom" />
+    <None Include="Resources\cdTail_lod3.simgeom" />
+    <None Include="Resources\cuBody_lod0.simgeom" />
+    <None Include="Resources\cuBody_lod1.simgeom" />
+    <None Include="Resources\cuBody_lod2.simgeom" />
+    <None Include="Resources\cuBody_lod3.simgeom" />
+    <None Include="Resources\cuBottom_lod0.simgeom" />
+    <None Include="Resources\cuBottom_lod1.simgeom" />
+    <None Include="Resources\cuBottom_lod2.simgeom" />
+    <None Include="Resources\cuBottom_lod3.simgeom" />
+    <None Include="Resources\cuFeet_lod2.simgeom" />
+    <None Include="Resources\cuHead_lod0.simgeom" />
+    <None Include="Resources\cuHead_lod1.simgeom" />
+    <None Include="Resources\cuHead_lod2.simgeom" />
+    <None Include="Resources\cuHead_lod3.simgeom" />
+    <None Include="Resources\cuShoes_lod0.simgeom" />
+    <None Include="Resources\cuShoes_lod1.simgeom" />
+    <None Include="Resources\cuShoes_lod2.simgeom" />
+    <None Include="Resources\cuShoes_lod3.simgeom" />
+    <None Include="Resources\cuSkirt_lod0.simgeom" />
+    <None Include="Resources\cuSkirt_lod1.simgeom" />
+    <None Include="Resources\cuSkirt_lod2.simgeom" />
+    <None Include="Resources\cuSkirt_lod3.simgeom" />
+    <None Include="Resources\custom3.dds" />
+    <None Include="Resources\cuTop_lod0.simgeom" />
+    <None Include="Resources\cuTop_lod1.simgeom" />
+    <None Include="Resources\cuTop_lod2.simgeom" />
+    <None Include="Resources\cuTop_lod3.simgeom" />
+    <None Include="Resources\empty_image.dds" />
+    <None Include="Resources\iuBody_lod0.simgeom" />
+    <None Include="Resources\iuBody_lod1.simgeom" />
+    <None Include="Resources\iuBody_lod2.simgeom" />
+    <None Include="Resources\iuBody_lod3.simgeom" />
+    <None Include="Resources\iuBottom_lod0.simgeom" />
+    <None Include="Resources\iuBottom_lod1.simgeom" />
+    <None Include="Resources\iuBottom_lod2.simgeom" />
+    <None Include="Resources\iuBottom_lod3.simgeom" />
+    <None Include="Resources\iuHead_lod0.simgeom" />
+    <None Include="Resources\iuHead_lod1.simgeom" />
+    <None Include="Resources\iuHead_lod2.simgeom" />
+    <None Include="Resources\iuHead_lod3.simgeom" />
+    <None Include="Resources\iuShoes_lod0.simgeom" />
+    <None Include="Resources\iuShoes_lod1.simgeom" />
+    <None Include="Resources\iuShoes_lod2.simgeom" />
+    <None Include="Resources\iuShoes_lod3.simgeom" />
+    <None Include="Resources\iuTop_lod0.simgeom" />
+    <None Include="Resources\iuTop_lod1.simgeom" />
+    <None Include="Resources\iuTop_lod2.simgeom" />
+    <None Include="Resources\iuTop_lod3.simgeom" />
+    <None Include="Resources\puBody_lod0.simgeom" />
+    <None Include="Resources\puBody_lod1.simgeom" />
+    <None Include="Resources\puBody_lod2.simgeom" />
+    <None Include="Resources\puBody_lod3.simgeom" />
+    <None Include="Resources\puBottom_lod0.simgeom" />
+    <None Include="Resources\puBottom_lod1.simgeom" />
+    <None Include="Resources\puBottom_lod2.simgeom" />
+    <None Include="Resources\puBottom_lod3.simgeom" />
+    <None Include="Resources\puFeet_lod0.simgeom" />
+    <None Include="Resources\puFeet_lod1.simgeom" />
+    <None Include="Resources\puFeet_lod2.simgeom" />
+    <None Include="Resources\puFeet_lod3.simgeom" />
+    <None Include="Resources\puHead_lod0.simgeom" />
+    <None Include="Resources\puHead_lod1.simgeom" />
+    <None Include="Resources\puHead_lod2.simgeom" />
+    <None Include="Resources\puHead_lod3.simgeom" />
+    <None Include="Resources\puShoes_lod0.simgeom" />
+    <None Include="Resources\puShoes_lod1.simgeom" />
+    <None Include="Resources\puShoes_lod2.simgeom" />
+    <None Include="Resources\puShoes_lod3.simgeom" />
+    <None Include="Resources\puTop_lod0.simgeom" />
+    <None Include="Resources\puTop_lod1.simgeom" />
+    <None Include="Resources\puTop_lod2.simgeom" />
+    <None Include="Resources\puTop_lod3.simgeom" />
+    <None Include="Resources\yfBody_lod0.simgeom" />
+    <None Include="Resources\yfBody_lod1.simgeom" />
+    <None Include="Resources\yfBody_lod2.simgeom" />
+    <None Include="Resources\yfBody_lod3.simgeom" />
+    <None Include="Resources\yfBottom_lod0.simgeom" />
+    <None Include="Resources\yfBottom_lod1.simgeom" />
+    <None Include="Resources\yfBottom_lod2.simgeom" />
+    <None Include="Resources\yfBottom_lod3.simgeom" />
+    <None Include="Resources\yfHairReference.simgeom" />
+    <None Include="Resources\yfHead_lod0.simgeom" />
+    <None Include="Resources\yfHead_lod0_1.simgeom" />
+    <None Include="Resources\blankBump_pet.dds" />
+    <None Include="Resources\blankBump_shoes.dds" />
+    <None Include="Resources\blankBump_hat.dds" />
+    <None Include="Resources\blankBump_necklace.dds" />
+    <None Include="Resources\BlankSpecular_pet.dds" />
+    <None Include="Resources\CatSkin.png" />
+    <None Include="Resources\DogSkin.png" />
+    <Content Include="phSlotRayData.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\ToddlerSkin.png" />
+    <Content Include="S4_AdultHuman_RIG.grannyrig">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="S4_ChildHuman_RIG.grannyrig">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="S4_ToddlerHuman_RIG.grannyrig">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\yfHead_lod1.simgeom" />
+    <None Include="Resources\yfHead_lod2.simgeom" />
+    <None Include="Resources\yfHead_lod3.simgeom" />
+    <None Include="Resources\yfShoes_lod0.simgeom" />
+    <None Include="Resources\yfShoes_lod1.simgeom" />
+    <None Include="Resources\yfShoes_lod2.simgeom" />
+    <None Include="Resources\yfShoes_lod3.simgeom" />
+    <None Include="Resources\yfSkirt_lod0.simgeom" />
+    <None Include="Resources\yfSkirt_lod1.simgeom" />
+    <None Include="Resources\yfSkirt_lod2.simgeom" />
+    <None Include="Resources\yfSkirt_lod3.simgeom" />
+    <None Include="Resources\yfTail_lod0.simgeom" />
+    <None Include="Resources\yfTail_lod1.simgeom" />
+    <None Include="Resources\yfTail_lod2.simgeom" />
+    <None Include="Resources\yfTail_lod3.simgeom" />
+    <None Include="Resources\yfTop_lod0.simgeom" />
+    <None Include="Resources\yfTop_lod1.simgeom" />
+    <None Include="Resources\yfTop_lod2.simgeom" />
+    <None Include="Resources\yfTop_lod3.simgeom" />
+    <None Include="Resources\ymBody_lod0.simgeom" />
+    <None Include="Resources\ymBody_lod1.simgeom" />
+    <None Include="Resources\ymBody_lod2.simgeom" />
+    <None Include="Resources\ymBody_lod3.simgeom" />
+    <None Include="Resources\ymBottom_lod0.simgeom" />
+    <None Include="Resources\ymBottom_lod1.simgeom" />
+    <None Include="Resources\ymBottom_lod2.simgeom" />
+    <None Include="Resources\ymBottom_lod3.simgeom" />
+    <None Include="Resources\ymHead_lod0.simgeom" />
+    <None Include="Resources\ymHead_lod1.simgeom" />
+    <None Include="Resources\ymHead_lod2.simgeom" />
+    <None Include="Resources\ymHead_lod3.simgeom" />
+    <None Include="Resources\ymShoes_lod0.simgeom" />
+    <None Include="Resources\ymShoes_lod1.simgeom" />
+    <None Include="Resources\ymShoes_lod2.simgeom" />
+    <None Include="Resources\ymShoes_lod3.simgeom" />
+    <None Include="Resources\ymSkirt_lod0.simgeom" />
+    <None Include="Resources\ymSkirt_lod1.simgeom" />
+    <None Include="Resources\ymSkirt_lod2.simgeom" />
+    <None Include="Resources\ymSkirt_lod3.simgeom" />
+    <None Include="Resources\ymTail_lod0.simgeom" />
+    <None Include="Resources\ymTail_lod1.simgeom" />
+    <None Include="Resources\ymTail_lod2.simgeom" />
+    <None Include="Resources\ymTail_lod3.simgeom" />
+    <None Include="Resources\ymTop_lod0.simgeom" />
+    <None Include="Resources\ymTop_lod1.simgeom" />
+    <None Include="Resources\ymTop_lod2.simgeom" />
+    <None Include="Resources\ymTop_lod3.simgeom" />
+    <Content Include="S4_AdultCat_RIG.grannyrig">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="S4_AdultDog_RIG.grannyrig">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="S4_AdultLittleDog_RIG.grannyrig">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="S4_ChildCat_RIG.grannyrig">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="S4_ChildDog_RIG.grannyrig">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="S4_InfantHuman_RIG.grannyrig">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GPL-3.0.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="iconwhite2.ico" />
+    <Content Include="S4_03B33DDF_00000000_D89CB9186B79ACB7.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ahSlotRayData.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="squishinterface_Win32.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="squishinterface_x64.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\MaleSkin.png" />
+    <None Include="Resources\ChildSkin.png" />
+    <None Include="Resources\FemaleSkin.png" />
+    <None Include="Resources\MaleUnderwear.png" />
+    <None Include="Resources\ChildUnderwear.png" />
+    <None Include="Resources\ChildSkinbw.png" />
+    <None Include="Resources\FemaleUnderwear.png" />
+    <None Include="Resources\FemaleSkinContrast.png" />
+    <None Include="Resources\BrownEyes.png" />
+    <None Include="Resources\FemaleSkin_color.png" />
+    <None Include="Resources\ChildSkin.bmp" />
+    <None Include="Resources\NullImage.bmp" />
+    <None Include="Resources\BlankDDS.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="CASPartPreviewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GEOMviewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
