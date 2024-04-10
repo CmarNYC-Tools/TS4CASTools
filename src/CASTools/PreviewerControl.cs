@@ -111,10 +111,14 @@ namespace XMODS
                 SetCheckBoxState(previewTop_checkBox, false);
                 SetCheckBoxState(previewBottom_checkBox, false);
                 SetCheckBoxState(previewUndies_checkBox, false);
-                SetCheckBoxState(previewEars_checkBox, true, previewEars_panel);
-                SetCheckBoxState(previewTail_checkBox, true, previewTail_panel);
-                previewEars_checkBox.Enabled = true;
-                previewTail_checkBox.Enabled = true;
+                var showEars = myCASP.Species != XmodsEnums.Species.Horse && myCASP.Species!= XmodsEnums.Species.Fox;
+                var showTail = myCASP.Species != XmodsEnums.Species.Horse;
+
+
+                SetCheckBoxState(previewEars_checkBox, showEars, previewEars_panel);
+                SetCheckBoxState(previewTail_checkBox, showTail, previewTail_panel);
+                previewEars_checkBox.Enabled = showEars;
+                previewTail_checkBox.Enabled = showTail;
                 previewBody_checkBox.Enabled = true;
                 if (myCASP.Species == XmodsEnums.Species.Cat)
                 {
@@ -122,7 +126,7 @@ namespace XMODS
                     SetRadioButtonState(previewTailRing_radioButton, false);
                     SetRadioButtonState(previewTailScrew_radioButton, false);
                 }
-                else
+                else if(myCASP.Species != XmodsEnums.Species.Horse  && myCASP.Species != XmodsEnums.Species.Fox)
                 {
                     previewTailRing_radioButton.Enabled = true;
                     previewTailScrew_radioButton.Enabled = true;

@@ -421,16 +421,17 @@ namespace XMODS
             if ((age & XmodsEnums.Age.Infant) > 0) specifier = (species == XmodsEnums.Species.Human ? "i" : "c");
             else if (age == XmodsEnums.Age.Toddler) specifier = (species == XmodsEnums.Species.Human ? "p" : "c");
             else if (age == XmodsEnums.Age.Child) specifier = "c";
-            else specifier = (species == XmodsEnums.Species.Human || species == XmodsEnums.Species.Werewolf ? "y" : "a");
-            if (species != XmodsEnums.Species.Human && species != XmodsEnums.Species.Werewolf) specifier +=
+            else specifier = species == XmodsEnums.Species.Human ? "y" : "a";
+            if (species != XmodsEnums.Species.Human) specifier +=
                 (age == XmodsEnums.Age.Child && species == XmodsEnums.Species.LittleDog) ? "d" :
+                (species == XmodsEnums.Species.Fox)?"x":
                 species.ToString().Substring(0, 1).ToLower();
             else if (age <= XmodsEnums.Age.Child || (age & XmodsEnums.Age.Infant) > 0) specifier += "u";
             else specifier += (gender == XmodsEnums.Gender.Male || gender == XmodsEnums.Gender.Female) ? gender.ToString().Substring(0, 1).ToLower() : "m";
 
             myHead.Geometry = SimMesh(new GEOM(new BinaryReader(new MemoryStream((byte[])rm.GetObject(specifier + "Head_lod" + lod.ToString())))), deformShape, deformNormals);
             myFeet.Geometry = SimMesh(new GEOM(new BinaryReader(new MemoryStream((byte[])rm.GetObject(specifier + "Shoes_lod" + lod.ToString())))), deformShape, deformNormals);
-            if (species == XmodsEnums.Species.Human || species == XmodsEnums.Species.Werewolf)
+            if (species == XmodsEnums.Species.Human)
             {
                 myTop.Geometry = SimMesh(new GEOM(new BinaryReader(new MemoryStream((byte[])rm.GetObject(specifier + "Top_lod" + lod.ToString())))), deformShape, deformNormals);
                 myBottom.Geometry = SimMesh(new GEOM(new BinaryReader(new MemoryStream((byte[])rm.GetObject(specifier + "Bottom_lod" + lod.ToString())))), deformShape, deformNormals);
@@ -438,7 +439,8 @@ namespace XMODS
             else
             {
                 myBody.Geometry = SimMesh(new GEOM(new BinaryReader(new MemoryStream((byte[])rm.GetObject(specifier + "Body_lod" + lod.ToString())))), deformShape, deformNormals);
-                myEars.Geometry = SimMesh(new GEOM(new BinaryReader(new MemoryStream((byte[])rm.GetObject(specifier + "EarsUp_lod" + lod.ToString())))));
+                if(species != XmodsEnums.Species.Horse)
+                    myEars.Geometry = SimMesh(new GEOM(new BinaryReader(new MemoryStream((byte[])rm.GetObject(specifier + "EarsUp_lod" + lod.ToString())))));
                 myTail.Geometry = SimMesh(new GEOM(new BinaryReader(new MemoryStream((byte[])rm.GetObject(specifier + "Tail_lod" + lod.ToString())))));
             }
         }
@@ -452,6 +454,7 @@ namespace XMODS
             else specifier = (species == XmodsEnums.Species.Human ? "y" : "a");
             if (species != XmodsEnums.Species.Human) specifier +=
                 (age == XmodsEnums.Age.Child && species == XmodsEnums.Species.LittleDog) ? "d" :
+                (species == XmodsEnums.Species.Fox)?"x":
                 species.ToString().Substring(0, 1).ToLower();
             else if (age <= XmodsEnums.Age.Child || (age & XmodsEnums.Age.Infant) > 0) specifier += "u";
             else specifier += gender.ToString().Substring(0, 1).ToLower();
@@ -474,6 +477,7 @@ namespace XMODS
             else specifier = (species == XmodsEnums.Species.Human ? "y" : "a");
             if (species != XmodsEnums.Species.Human) specifier +=
                 (age == XmodsEnums.Age.Child && species == XmodsEnums.Species.LittleDog) ? "d" :
+                (species == XmodsEnums.Species.Fox)?"x":
                 species.ToString().Substring(0, 1).ToLower();
             else if (age <= XmodsEnums.Age.Child || (age & XmodsEnums.Age.Infant) > 0) specifier += "u";
             else specifier += gender.ToString().Substring(0, 1).ToLower();
@@ -497,7 +501,7 @@ namespace XMODS
 
         private void GetPartMaterials(XmodsEnums.Species species, XmodsEnums.Age age, XmodsEnums.Gender gender)
         {
-            if (species == XmodsEnums.Species.Human || species == XmodsEnums.Species.Werewolf)
+            if (species == XmodsEnums.Species.Human)
             {
                 if ((age & XmodsEnums.Age.TeenToElder) > 0)
                 {
@@ -527,9 +531,19 @@ namespace XMODS
             {
                 mySkin = new DiffuseMaterial(GetImageBrush(Properties.Resources.CatSkin));
             }
-            else
+            else if(species == XmodsEnums.Species.Dog)
             {
                 mySkin = new DiffuseMaterial(GetImageBrush(Properties.Resources.DogSkin));
+            }
+            else if(species == XmodsEnums.Species.Fox)
+            {
+                mySkin = new DiffuseMaterial(GetImageBrush(Properties.Resources.FoxSkin));
+                
+            }
+            else if(species == XmodsEnums.Species.Horse)
+            {
+                mySkin = new DiffuseMaterial(GetImageBrush(Properties.Resources.HorseSkin));
+                
             }
 
         }

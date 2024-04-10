@@ -865,6 +865,7 @@ namespace XMODS
             else specifier = (species == XmodsEnums.Species.Human ? "y" : "a");
             if (species != XmodsEnums.Species.Human) specifier +=
                 (age == XmodsEnums.Age.Child && species == XmodsEnums.Species.LittleDog) ? "d" :
+                (species == XmodsEnums.Species.Fox)?"x":
                 species.ToString().Substring(0, 1).ToLower();
             else if (age <= XmodsEnums.Age.Child || (age & XmodsEnums.Age.Infant) > 0) specifier += "u";
             else if (age > XmodsEnums.Age.Child && age <= XmodsEnums.Age.Elder && gender == XmodsEnums.Gender.Unisex) specifier += "f";

@@ -786,7 +786,12 @@ namespace XMODS
                         specifier[1] = "c" + ((XmodsEnums.Species)sp).ToString().Substring(0, 1).ToLower();
                         specifierLong = new string[numAgeGenders];
                         specifierLong[0] = "Adult " + ((XmodsEnums.Species)sp).ToString();
-                        specifierLong[1] = ((XmodsEnums.Species)sp) == XmodsEnums.Species.Dog ? "Puppy" : "Kitten";
+                        specifierLong[1] = ((XmodsEnums.Species)sp) switch{
+                            XmodsEnums.Species.Dog => "Puppy",
+                            XmodsEnums.Species.Cat => "Kitten",
+                            XmodsEnums.Species.Horse => "Foal",
+
+                        } ;
                     }
                     for (int ag = 0; ag < numAgeGenders; ag++)
                     {
@@ -975,7 +980,12 @@ namespace XMODS
                         specifier[1] = "c" + ((XmodsEnums.Species)sp).ToString().Substring(0, 1).ToLower();
                         specifierLong = new string[numAgeGenders];
                         specifierLong[0] = "Adult " + ((XmodsEnums.Species)sp).ToString();
-                        specifierLong[1] = ((XmodsEnums.Species)sp) == XmodsEnums.Species.Dog ? "Puppy" : "Kitten";
+                        specifierLong[1] =  ((XmodsEnums.Species)sp) switch{
+                            XmodsEnums.Species.Dog => "Puppy",
+                            XmodsEnums.Species.Cat => "Kitten",
+                            XmodsEnums.Species.Horse => "Foal",
+
+                        } ;
                     }
                     for (int ag = 0; ag < numAgeGenders; ag++)
                     {

@@ -114,8 +114,11 @@ namespace XMODS
         RIG adRig;
         RIG cdRig;
         RIG alRig;
+        RIG chRig;
+        RIG ahRig;
+        RIG axRig;
 
-        Dictionary<uint, GEOM.SlotRayData> ahSlotRayData, chSlotRayData, phSlotRayData, ihSlotRayData, adSlotRayData, acSlotRayData, alSlotRayData, cdSlotRayData, ccSlotRayData;
+        Dictionary<uint, GEOM.SlotRayData> auSlotRayData, cuSlotRayData, puSlotRayData, iuSlotRayData, adSlotRayData, acSlotRayData, alSlotRayData, cdSlotRayData, ccSlotRayData, chSlotRayData, ahSlotRayData, axSlotRayData;
 
         Vector3 layerStartPoint = new Vector3(0f, 1.7f, -0.05f);
 
@@ -327,6 +330,9 @@ namespace XMODS
             adRig = GetTS4Rig(XmodsEnums.Species.Dog, XmodsEnums.Age.Adult);
             cdRig = GetTS4Rig(XmodsEnums.Species.Dog, XmodsEnums.Age.Child);
             alRig = GetTS4Rig(XmodsEnums.Species.LittleDog, XmodsEnums.Age.Adult);
+            chRig = GetTS4Rig(XmodsEnums.Species.Horse, XmodsEnums.Age.Child);
+            ahRig = GetTS4Rig(XmodsEnums.Species.Horse, XmodsEnums.Age.Adult);
+            axRig = GetTS4Rig(XmodsEnums.Species.Fox, XmodsEnums.Age.Adult);
 
             GEOMlayersCoordinates.Text = layerStartPoint.ToString();
 
@@ -340,6 +346,9 @@ namespace XMODS
             acSlotRayData = ReadSlotData(acRig, XmodsEnums.Species.Cat, XmodsEnums.Age.Adult);
             cdSlotRayData = ReadSlotData(cdRig, XmodsEnums.Species.Dog, XmodsEnums.Age.Child);
             ccSlotRayData = ReadSlotData(ccRig, XmodsEnums.Species.Cat, XmodsEnums.Age.Child);
+            ahSlotRayData = ReadSlotData(ahRig, XmodsEnums.Species.Horse, XmodsEnums.Age.Adult);
+            chSlotRayData = ReadSlotData(acRig, XmodsEnums.Species.Horse, XmodsEnums.Age.Child);
+            axSlotRayData = ReadSlotData(axRig, XmodsEnums.Species.Fox, XmodsEnums.Age.Adult);
 
             SearchCASPBodyType_comboBox.Items.AddRange(Enum.GetNames(typeof(XmodsEnums.BodyType)));
 
@@ -352,7 +361,9 @@ namespace XMODS
         {
             string prefix = (age == XmodsEnums.Age.Toddler ? "p" : age.ToString().Substring(0, 1).ToLower()) + 
                 (species == XmodsEnums.Species.LittleDog && age == XmodsEnums.Age.Child ? "d" :
+                (species == XmodsEnums.Species.Fox)?"x":
                 (species == XmodsEnums.Species.Human)?"u":
+                 species.ToString().Substring(0, 1).ToLower());
             string path = appStartupPath + "\\" + prefix + "SlotRayData.txt";
             System.IO.StreamReader file = new System.IO.StreamReader(path);
             Dictionary<uint, GEOM.SlotRayData> tmp = new Dictionary<uint, GEOM.SlotRayData>();
@@ -366,10 +377,16 @@ namespace XMODS
                 {
                     try
                     {
+                        var boneIndex = (uint)rig.GetBoneIndex(hash);
+                        if(boneIndex == uint.MaxValue)
+                        {
+                            System.Diagnostics.Debug.WriteLine($"Unable to find bone {hash:X8} {species}");
+                            continue;
+                        }                        
                         Vector3 avgPos = Vector3.Parse(values[1]);
                         Vector3 origin = Vector3.Parse(values[2]);
                         if (values[3].Length < 8 || !UInt32.TryParse(values[3].Substring(2), NumberStyles.HexNumber, NumberFormatInfo.InvariantInfo, out pivot)) pivot = 0;
-                        tmp.Add(hash, new SlotRayData((uint)rig.GetBoneIndex(hash), avgPos, origin, rig.GetBoneGlobalQuaternion(hash).Conjugate(), pivot, (byte)rig.GetBoneIndex(pivot)));
+                        tmp.Add(hash, new SlotRayData(boneIndex, avgPos, origin, rig.GetBoneGlobalQuaternion(hash).Conjugate(), pivot, (byte)rig.GetBoneIndex(pivot)));
                     }
                     catch (Exception e)
                     {
@@ -413,10 +430,19 @@ namespace XMODS
                 if (age == XmodsEnums.Age.Child) return cdSlotRayData;
                 else return adSlotRayData;
             }
-            else // if (species == XmodsEnums.Species.LittleDog)
+            else if (species == XmodsEnums.Species.LittleDog)
             {
                 if (age == XmodsEnums.Age.Child) return cdSlotRayData;
                 else return alSlotRayData;
+            }
+            else if (species == XmodsEnums.Species.Horse)
+            {
+                if (age == XmodsEnums.Age.Child) return chSlotRayData;
+                else return ahSlotRayData;
+            }
+            else // if (species == XmodsEnums.Species.Fox)
+            {
+                return axSlotRayData;
             }
         }
 
@@ -460,10 +486,16 @@ namespace XMODS
                 if (age == XmodsEnums.Age.Child) return cdRig;
                 else return adRig;
             }
-            else // if (species == XmodsEnums.Species.LargeDog)
+            else if (species == XmodsEnums.Species.LittleDog)
             {
                 if (age == XmodsEnums.Age.Child) return cdRig;
                 else return alRig;
+            }
+            else // if(species == XmodsEnums.Species.Horse)
+            {
+                
+                if (age == XmodsEnums.Age.Child) return chRig;
+                else return ahRig;
             }
         }
 
