@@ -1,4 +1,4 @@
-﻿/* TS4 CAS Mesh Tools, a tool for creating custom content for The Sims 4,
+/* TS4 CAS Mesh Tools, a tool for creating custom content for The Sims 4,
    Copyright (C) 2014  C. Marinetti
 
    This program is free software: you can redistribute it and/or modify
@@ -331,10 +331,10 @@ namespace XMODS
             GEOMlayersCoordinates.Text = layerStartPoint.ToString();
 
             MeshSlotrayRef_comboBox.SelectedIndex = 0;
-            ahSlotRayData = ReadSlotData(adultRig, XmodsEnums.Species.Human, XmodsEnums.Age.Adult);
-            chSlotRayData = ReadSlotData(childRig, XmodsEnums.Species.Human, XmodsEnums.Age.Child);
-            phSlotRayData = ReadSlotData(toddlerRig, XmodsEnums.Species.Human, XmodsEnums.Age.Toddler);
-            ihSlotRayData = ReadSlotData(infantRig, XmodsEnums.Species.Human, XmodsEnums.Age.Infant);
+            auSlotRayData = ReadSlotData(adultRig, XmodsEnums.Species.Human, XmodsEnums.Age.Adult);
+            cuSlotRayData = ReadSlotData(childRig, XmodsEnums.Species.Human, XmodsEnums.Age.Child);
+            puSlotRayData = ReadSlotData(toddlerRig, XmodsEnums.Species.Human, XmodsEnums.Age.Toddler);
+            iuSlotRayData = ReadSlotData(infantRig, XmodsEnums.Species.Human, XmodsEnums.Age.Infant);
             adSlotRayData = ReadSlotData(adRig, XmodsEnums.Species.Dog, XmodsEnums.Age.Adult);
             alSlotRayData = ReadSlotData(alRig, XmodsEnums.Species.LittleDog, XmodsEnums.Age.Adult);
             acSlotRayData = ReadSlotData(acRig, XmodsEnums.Species.Cat, XmodsEnums.Age.Adult);
@@ -351,7 +351,8 @@ namespace XMODS
         private Dictionary<uint, GEOM.SlotRayData> ReadSlotData(RIG rig, XmodsEnums.Species species, XmodsEnums.Age age)
         {
             string prefix = (age == XmodsEnums.Age.Toddler ? "p" : age.ToString().Substring(0, 1).ToLower()) + 
-                (species == XmodsEnums.Species.LittleDog && age == XmodsEnums.Age.Child ? "d" : species.ToString().Substring(0, 1).ToLower());
+                (species == XmodsEnums.Species.LittleDog && age == XmodsEnums.Age.Child ? "d" :
+                (species == XmodsEnums.Species.Human)?"u":
             string path = appStartupPath + "\\" + prefix + "SlotRayData.txt";
             System.IO.StreamReader file = new System.IO.StreamReader(path);
             Dictionary<uint, GEOM.SlotRayData> tmp = new Dictionary<uint, GEOM.SlotRayData>();
@@ -397,10 +398,10 @@ namespace XMODS
         {
             if (species == XmodsEnums.Species.Human)
             {
-                if (age == XmodsEnums.Age.Infant) return ihSlotRayData;
-                else if (age == XmodsEnums.Age.Toddler) return phSlotRayData;
-                else if (age == XmodsEnums.Age.Child) return chSlotRayData;
-                else return ahSlotRayData;
+                if (age == XmodsEnums.Age.Infant) return iuSlotRayData;
+                else if (age == XmodsEnums.Age.Toddler) return puSlotRayData;
+                else if (age == XmodsEnums.Age.Child) return cuSlotRayData;
+                else return auSlotRayData;
             }
             else if (species == XmodsEnums.Species.Cat)
             {
