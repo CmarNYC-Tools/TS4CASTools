@@ -34,7 +34,7 @@ namespace XMODS
 {
     public partial class Form1 : Form
     {
-        string CASToolsVersion = "3.8.2.0";
+        string CASToolsVersion = typeof(Form1).Assembly.GetName().Version.ToString();
 
         string GEOMfilter = "GEOM mesh files (*.simgeom, *.geom)|*.simgeom;*.geom|All files (*.*)|*.*";
         string Meshfilter = "Mesh files (*.ms3d, *.simgeom, *.geom, *.obj, *.dae)|*.ms3d;*.simgeom;*.geom;*.obj;*.dae|All files (*.*)|*.*";
