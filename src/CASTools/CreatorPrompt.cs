@@ -24,7 +24,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
-using Ookii.Dialogs;
+using Ookii.Dialogs.Wpf;
 
 namespace XMODS
 {
@@ -72,8 +72,8 @@ namespace XMODS
             findFolder.Description = "Select the folder where your game packages are located";
             findFolder.UseDescriptionForTitle = true;
             findFolder.SelectedPath = TS4PathString.Text;
-            DialogResult res = findFolder.ShowDialog();
-            if (res == DialogResult.OK)
+            var res = findFolder.ShowDialog();
+            if (res == true)
             {
                 TS4PathString.Text = findFolder.SelectedPath;
             }
@@ -86,8 +86,8 @@ namespace XMODS
             findFolder.Description = "Select the folder where your Sims 4 user files are located";
             findFolder.UseDescriptionForTitle = true;
             findFolder.SelectedPath = TS4UserPathString.Text;
-            DialogResult res = findFolder.ShowDialog();
-            if (res == DialogResult.OK)
+            var res = findFolder.ShowDialog();
+            if (res == true)
             {
                 TS4UserPathString.Text = findFolder.SelectedPath;
             }
