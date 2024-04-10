@@ -936,6 +936,16 @@ namespace XMODS
             {
                 List<string> pathsSim = new List<string>(Directory.GetFiles(TS4FilesPath, "Simulation*Build0.package", SearchOption.AllDirectories));
                 List<string> pathsClient = new List<string>(Directory.GetFiles(TS4FilesPath, "Client*Build0.package", SearchOption.AllDirectories));
+                
+                if(Path.GetFileName(TS4FilesPath) == "Contents"){
+                    var appPath = Path.GetDirectoryName(Path.GetDirectoryName(TS4FilesPath));
+                    var packs = Path.Combine(appPath, "The Sims 4 Packs");
+                    if(Directory.Exists(packs)){
+                        pathsSim.AddRange(Directory.GetFiles(packs, "Simulation*Build*.package", SearchOption.AllDirectories));
+                        pathsClient.AddRange(Directory.GetFiles(packs, "Client*Build*.package", SearchOption.AllDirectories));
+                    }
+
+                }
                 pathsSim.Sort();
                 pathsClient.Sort();
                 paths0.AddRange(pathsSim);
