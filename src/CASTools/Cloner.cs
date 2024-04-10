@@ -271,6 +271,12 @@ namespace XMODS
                                     rResNew.Instance = FNVhash.FNV64(newMeshNameRandom + "_emission") | 0x8000000000000000;
                                     CASPlist[i].setLink(CASPlist[i].EmissionIndex, new TGI(rResNew.ResourceType, rResNew.ResourceGroup, rResNew.Instance));
                                 }
+                                else if (tgi == CASPlist[i].LinkList[CASPlist[i].ColorShiftMaskIndex])
+                                {
+                                    rResNew.ResourceGroup = rRes.ResourceGroup | 0x80000000;
+                                    rResNew.Instance = FNVhash.FNV64(newMeshNameRandom + "_colorshiftmask") | 0x8000000000000000;
+                                    CASPlist[i].setLink(CASPlist[i].ColorShiftMaskIndex, new TGI(rResNew.ResourceType, rResNew.ResourceGroup, rResNew.Instance));
+                                }
                                 else
                                 {
                                     TGI oldtgi = new TGI(rRes.ResourceType, rRes.ResourceGroup, rRes.Instance);

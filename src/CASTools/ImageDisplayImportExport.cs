@@ -184,7 +184,7 @@ namespace XMODS
             }
             cloneTextureSave_button.Enabled = false;
             if (imageType == Form1.ImageType.Specular) cloneTextureMask_checkBox.Visible = true;
-            if (imageType == Form1.ImageType.GlowMap || imageType == Form1.ImageType.Swatch || imageType == Form1.ImageType.Thumbnail)
+            if (imageType == Form1.ImageType.GlowMap || imageType == Form1.ImageType.Swatch || imageType == Form1.ImageType.Thumbnail|| imageType == Form1.ImageType.ColorShiftMask)
             {
                 cloneTextureBlank_button.Text = "Remove";
             }
@@ -363,6 +363,10 @@ namespace XMODS
                 {
                     openFileDialog1.Title = "Select Swatch Image File";
                 }
+                else if (type == Form1.ImageType.ColorShiftMask)
+                {
+                    openFileDialog1.Title = "Select Color Shift Mask Image File";
+                }
             }
             openFileDialog1.FilterIndex = 1;
             openFileDialog1.CheckFileExists = true;
@@ -386,6 +390,33 @@ namespace XMODS
                         {
                             img = new Bitmap(myStream);
                             rle.ImportToRLE(GetConvertedPNG(img, true, true));      //sets dds
+                        }
+                        else
+                        {
+                            dds = new DdsFile();
+                            dds.Load(myStream, false);
+                            bool oldDXT = dds.UseDXT;
+                            if (!dds.UseDXT) dds.UseDXT = true;
+                            Stream m = new MemoryStream();
+                            dds.Save(m);
+                            m.Position = 0;
+                            rle.ImportToRLE(m);
+                            if (dds.UseDXT != oldDXT) dds.UseDXT = oldDXT;
+                            img = dds.Image;
+                        }
+                    }
+                    DisplayImage(img);
+                }
+                else if (type == Form1.ImageType.ColorShiftMask)
+                {
+                    using (FileStream myStream = new FileStream(openFileDialog1.FileName, FileMode.Open, FileAccess.Read))
+                    {
+                        rle = new RLEResource(1, null);
+                        if (String.Compare(Path.GetExtension(openFileDialog1.FileName).ToLower(), ".png") == 0)
+                        {
+                            img = new Bitmap(myStream);
+                            var ddsStream = GetConvertedPNG(img, true, false,true);
+                            rle.ImportToRLE(ddsStream);      //sets dds
                         }
                         else
                         {
@@ -544,13 +575,14 @@ namespace XMODS
             }
         }
 
-        private Stream GetConvertedPNG(Image image, bool generateMipMaps, bool forceDXT)
+        private Stream GetConvertedPNG(Image image, bool generateMipMaps, bool forceDXT, bool useLuminance=false)
         {
             PleaseWait_label.Location = new Point(this.Width / 2 - PleaseWait_label.Width / 2, this.Height / 2 - PleaseWait_label.Height / 2);
             PleaseWait_label.Visible = true;
             PleaseWait_label.Refresh();
             dds = new DdsFile();
             dds.CreateImage(image, false);
+            dds.UseLuminance = useLuminance;
             if (generateMipMaps) dds.GenerateMipMaps();
             bool oldDXT = dds.UseDXT;
             if (forceDXT && !dds.UseDXT) dds.UseDXT = true;

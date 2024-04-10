@@ -2333,7 +2333,8 @@
             "Shadow",
             "Specular",
             "NormalMap",
-            "Emission(Glow)Map"});
+            "Emission(Glow)Map",
+            "Color Shift Mask"});
             this.ClonePropTexture_comboBox.Location = new System.Drawing.Point(597, 338);
             this.ClonePropTexture_comboBox.Name = "ClonePropTexture_comboBox";
             this.ClonePropTexture_comboBox.Size = new System.Drawing.Size(138, 21);
