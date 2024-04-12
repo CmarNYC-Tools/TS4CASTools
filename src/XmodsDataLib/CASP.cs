@@ -122,7 +122,7 @@ namespace Xmods.DataLib
                               // --repeat(count)
         TGI[] IGTtable;
 
-        uint currentVersion = 0x31;
+        public const uint currentVersion = 0x31;
 
         public bool UpdateToLatestVersion()
         {
@@ -210,9 +210,9 @@ namespace Xmods.DataLib
                     return true;
                 }
             }
-            else if (this.version < 0x2E)
+            else if (this.version < currentVersion)
             {
-                this.version = 0x2E;
+                this.version = currentVersion;
                 return true;
             }
             return false;

@@ -1590,7 +1590,7 @@ namespace XMODS
                 bool needUpdate = false;
                 for (int i = 0; i < clonePackCASPs.Count; i++)
                 {
-                    if (clonePackCASPs[i].Casp.Version < 0x2E)
+                    if (clonePackCASPs[i].Casp.Version < CASP.currentVersion)
                     {
                         needUpdate = true;
                     }
