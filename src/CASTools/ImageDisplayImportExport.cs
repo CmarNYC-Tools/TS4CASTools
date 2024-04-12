@@ -415,7 +415,7 @@ namespace XMODS
                         if (String.Compare(Path.GetExtension(openFileDialog1.FileName).ToLower(), ".png") == 0)
                         {
                             img = new Bitmap(myStream);
-                            var ddsStream = GetConvertedPNG(img, true, false,true);
+                            var ddsStream = img.ToColorShiftMask();
                             rle.ImportToRLE(ddsStream);      //sets dds
                         }
                         else
@@ -575,14 +575,13 @@ namespace XMODS
             }
         }
 
-        private Stream GetConvertedPNG(Image image, bool generateMipMaps, bool forceDXT, bool useLuminance=false)
+        private Stream GetConvertedPNG(Image image, bool generateMipMaps, bool forceDXT)
         {
             PleaseWait_label.Location = new Point(this.Width / 2 - PleaseWait_label.Width / 2, this.Height / 2 - PleaseWait_label.Height / 2);
             PleaseWait_label.Visible = true;
             PleaseWait_label.Refresh();
             dds = new DdsFile();
             dds.CreateImage(image, false);
-            dds.UseLuminance = useLuminance;
             if (generateMipMaps) dds.GenerateMipMaps();
             bool oldDXT = dds.UseDXT;
             if (forceDXT && !dds.UseDXT) dds.UseDXT = true;
