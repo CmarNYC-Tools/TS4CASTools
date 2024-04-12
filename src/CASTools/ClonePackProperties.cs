@@ -44,12 +44,12 @@ namespace XMODS
         bool changesRecolor = false, changesGeneral = false, changesThumbs = false, changesMesh = false, changesRegion = false, changesSliders = false, changesHairColor = false;
         DSTResource mySwatch;
         Object myTexture;
-        RLEResource myShadow, mySpecular;
-        DdsFile ddsSwatch, ddsTexture, ddsShadow, ddsSpecular;
-        Image textureImage, specularImage, shadowImage, bumpmapImage, glowImage;
-        IResourceIndexEntry iresSwatch, iresTexture, iresShadow, iresSpecular;
-        bool clonedSwatch, clonedTexture, clonedShadow, clonedSpecular, 
-             importedSwatch, importedTexture, importedShadow, importedSpecular;
+        RLEResource myShadow, mySpecular, myColorShiftMask;
+        DdsFile ddsSwatch, ddsTexture, ddsShadow, ddsSpecular, ddsColorShiftMask;
+        Image textureImage, specularImage, shadowImage, bumpmapImage, glowImage, colorShiftMaskImage;
+        IResourceIndexEntry iresSwatch, iresTexture, iresShadow, iresSpecular, iresColorShiftMask;
+        bool clonedSwatch, clonedTexture, clonedShadow, clonedSpecular, clonedColorShiftMask, 
+             importedSwatch, importedTexture, importedShadow, importedSpecular, importedcolorShiftMask;
         string[] SpeciesNames = Enum.GetNames(typeof(XmodsEnums.Species));
         string[] BodyTypeNames = Enum.GetNames(typeof(XmodsEnums.BodyType));
         string[] BodySubTypeNames = Enum.GetNames(typeof(XmodsEnums.BodySubType));
@@ -485,6 +485,19 @@ namespace XMODS
                 specularImage = null;
             }
 
+            myColorShiftMask = FindCloneTextureRLE(myCASP.LinkList[myCASP.ColorShiftMaskIndex], out iresColorShiftMask, out clonedColorShiftMask);
+            if (myColorShiftMask != null)
+            {
+                ddsColorShiftMask = new DdsFile();
+                ddsColorShiftMask.Load(myColorShiftMask.ToDDS(), false);
+                colorShiftMaskImage = new Bitmap(ddsColorShiftMask.Image);
+            }
+            else
+            {
+                ddsColorShiftMask = null;
+                colorShiftMaskImage = null;
+            }
+
             ClonePropFlags_dataGridView.CellValueChanged += ClonePropFlags_dataGridView_CellValueChanged;
             ClonePropID.TextChanged += ClonePropID_TextChanged;
             ClonePropFlags_checkedListBox.ItemCheck += ClonePropFlags_checkedListBox_ItemChecked;
@@ -602,6 +615,9 @@ namespace XMODS
                     break;
                 case 3:     //emissionmap
                     tmp = glowImage;
+                    break;
+                case 4:     //colorshiftmask
+                    tmp = colorShiftMaskImage;
                     break;
                 default:
                     tmp = null;
@@ -862,6 +878,49 @@ namespace XMODS
             }
             XmodsEnums.Gender gender = (XmodsEnums.Gender)tmp;
 
+            if (importedcolorShiftMask)
+            {
+                IResourceKey ik = null;
+                if (clonedColorShiftMask)
+                {
+                    DeleteResource(clonePack, iresColorShiftMask);
+                    ik = new TGIBlock(0, null, iresColorShiftMask.ResourceType, iresColorShiftMask.ResourceGroup, iresColorShiftMask.Instance);
+                }
+                else
+                {
+                    if (myColorShiftMask != null)
+                    {
+                        TGI newtgi = new TGI((uint)XmodsEnums.ResourceTypes.DXT5RLE2, 0x80000000U, Xmods.DataLib.FNVhash.FNV64(meshName + "_colorShiftMask") | 0x8000000000000000);
+                        for (int j = 0; j < clonePackCASPs.Count; j++)
+                        {
+                            if (clonePackCASPs[j].Casp.ColorShiftMaskIndex == clonePackCASPs[j].Casp.EmptyLink)
+                            {
+                                clonePackCASPs[j].Casp.ColorShiftMaskIndex = clonePackCASPs[j].Casp.addLink(newtgi);
+                            }
+                            else
+                            {
+                                clonePackCASPs[j].Casp.setLink(clonePackCASPs[j].Casp.ColorShiftMaskIndex, newtgi);
+                            }
+                        }
+                        ik = new TGIBlock(0, null, newtgi.Type, newtgi.Group, newtgi.Instance);
+                        clonedColorShiftMask = true;
+                    }
+                }
+                if (myColorShiftMask == null)
+                {
+                    for (int j = 0; j < clonePackCASPs.Count; j++)
+                    {
+                        clonePackCASPs[j].Casp.RemoveColorShiftMask();
+                    }
+                    clonedColorShiftMask = false;
+                }
+                else //if (myColorShiftMask != null)
+                {
+                    iresColorShiftMask = clonePack.AddResource(ik, myColorShiftMask.Stream, false);
+                    iresColorShiftMask.Compressed = (ushort)0x5A42;
+                }
+                importedcolorShiftMask = false;
+            }
             if (importedShadow)
             {
                 if (myShadow != null)
@@ -2299,6 +2358,9 @@ namespace XMODS
                 case 3:     //emissionmap
                     MeshGlowClicked();
                     break;
+                case 4:     //specular
+                    clonePropColorShiftMaskClicked();
+                    break;
                 default:
                     break;
             }
@@ -2338,6 +2400,24 @@ namespace XMODS
                 ddsSpecular.Load(mySpecular.ToDDS(), false);
                 specularImage = new Bitmap(ddsSpecular.Image);
                 ClonePropTexture_pictureBox.Image = specularImage;
+                cloneWait_label.Visible = false;
+                cloneWait_label.Refresh();
+                changesGeneral = true;
+            }
+        }private void clonePropColorShiftMaskClicked()
+        {
+            ImageDisplayImportExport imgDisplay = new ImageDisplayImportExport(myColorShiftMask, ImageType.ColorShiftMask, "Import/Export Color Shift Mask", myCASP.Species, myCASP.BodyType, false);
+            DialogResult res = imgDisplay.ShowDialog();
+              if (res == DialogResult.OK)
+            {
+                cloneWait_label.Visible = true;
+                cloneWait_label.Refresh();
+                myColorShiftMask = imgDisplay.ReturnRLE;
+                importedcolorShiftMask = true;
+                ddsColorShiftMask = new DdsFile();
+                ddsColorShiftMask.Load(myColorShiftMask.ToDDS(), false);
+                colorShiftMaskImage = new Bitmap(ddsColorShiftMask.Image);
+                ClonePropTexture_pictureBox.Image = colorShiftMaskImage;
                 cloneWait_label.Visible = false;
                 cloneWait_label.Refresh();
                 changesGeneral = true;

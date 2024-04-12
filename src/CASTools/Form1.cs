@@ -1,4 +1,4 @@
-/* TS4 CAS Mesh Tools, a tool for creating custom content for The Sims 4,
+﻿/* TS4 CAS Mesh Tools, a tool for creating custom content for The Sims 4,
    Copyright (C) 2014  C. Marinetti
 
    This program is free software: you can redistribute it and/or modify
@@ -136,7 +136,8 @@ namespace XMODS
             Shadow,
             Specular,
             Swatch,
-            Thumbnail
+            Thumbnail,
+            ColorShiftMask
         }
 
         public Form1()
@@ -1589,7 +1590,7 @@ namespace XMODS
                 bool needUpdate = false;
                 for (int i = 0; i < clonePackCASPs.Count; i++)
                 {
-                    if (clonePackCASPs[i].Casp.Version < 0x2E)
+                    if (clonePackCASPs[i].Casp.Version < CASP.currentVersion)
                     {
                         needUpdate = true;
                     }
