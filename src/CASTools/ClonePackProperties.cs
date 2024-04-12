@@ -880,36 +880,46 @@ namespace XMODS
 
             if (importedcolorShiftMask)
             {
-                if (myColorShiftMask != null)
+                IResourceKey ik = null;
+                if (clonedColorShiftMask)
                 {
-                    IResourceKey ik = null;
-                    if (clonedColorShiftMask)
+                    DeleteResource(clonePack, iresColorShiftMask);
+                    ik = new TGIBlock(0, null, iresColorShiftMask.ResourceType, iresColorShiftMask.ResourceGroup, iresColorShiftMask.Instance);
+                }
+                else
+                {
+                    if (myColorShiftMask != null)
                     {
-                        DeleteResource(clonePack, iresColorShiftMask);
-                        ik = new TGIBlock(0, null, iresColorShiftMask.ResourceType, iresColorShiftMask.ResourceGroup, iresColorShiftMask.Instance);
-                    }
-                    else
-                    {
-                        TGI newtgi = new TGI((uint)XmodsEnums.ResourceTypes.DXT5RLE2,
-                            0x80000000U, FNVhash.FNV64(clonePartName + "_colorShiftMask") | 0x8000000000000000);
-                        ik = new TGIBlock(0, null, newtgi.Type, newtgi.Group, newtgi.Instance);
-                        for (int i = 0; i < clonePackCASPs.Count; i++)
+                        TGI newtgi = new TGI((uint)XmodsEnums.ResourceTypes.DXT5RLE2, 0x80000000U, Xmods.DataLib.FNVhash.FNV64(meshName + "_colorShiftMask") | 0x8000000000000000);
+                        for (int j = 0; j < clonePackCASPs.Count; j++)
                         {
-                            if (clonePackCASPs[i].Casp.ColorShiftMaskIndex == clonePackCASPs[i].Casp.EmptyLink)
+                            if (clonePackCASPs[j].Casp.ColorShiftMaskIndex == clonePackCASPs[j].Casp.EmptyLink)
                             {
-                                clonePackCASPs[i].Casp.ColorShiftMaskIndex = clonePackCASPs[i].Casp.addLink(newtgi);
+                                clonePackCASPs[j].Casp.ColorShiftMaskIndex = clonePackCASPs[j].Casp.addLink(newtgi);
                             }
                             else
                             {
-                                clonePackCASPs[i].Casp.LinkList[clonePackCASPs[i].Casp.ColorShiftMaskIndex] = newtgi;
+                                clonePackCASPs[j].Casp.setLink(clonePackCASPs[j].Casp.ColorShiftMaskIndex, newtgi);
                             }
                         }
+                        ik = new TGIBlock(0, null, newtgi.Type, newtgi.Group, newtgi.Instance);
                         clonedColorShiftMask = true;
                     }
-                    iresColorShiftMask = clonePack.AddResource(ik, myColorShiftMask.Stream, true);
-                    iresColorShiftMask.Compressed = (ushort)0x5A42;
-                    importedcolorShiftMask = false;
                 }
+                if (myColorShiftMask == null)
+                {
+                    for (int j = 0; j < clonePackCASPs.Count; j++)
+                    {
+                        clonePackCASPs[j].Casp.RemoveColorShiftMask();
+                    }
+                    clonedColorShiftMask = false;
+                }
+                else //if (myColorShiftMask != null)
+                {
+                    iresColorShiftMask = clonePack.AddResource(ik, myColorShiftMask.Stream, false);
+                    iresColorShiftMask.Compressed = (ushort)0x5A42;
+                }
+                importedcolorShiftMask = false;
             }
             if (importedShadow)
             {
