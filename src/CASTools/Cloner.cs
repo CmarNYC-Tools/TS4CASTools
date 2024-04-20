@@ -69,7 +69,7 @@ namespace XMODS
             else if (New_radioButton.Checked)
             {
                 ulong meshInstance = (FNVhash.FNV64(NewMeshName.Text) + (uint)ran.Next()) | 0x8000000000000000;
-                uint outfitID = FNVhash.FNV16(NewMeshName.Text) | 0x80000000;
+                uint outfitID = FNVhash.FNV32(NewMeshName.Text);
                 List<CASP> CASPlist = new List<CASP>();
                 List<IResourceIndexEntry> irCASPlist = new List<IResourceIndexEntry>();
 
@@ -95,8 +95,7 @@ namespace XMODS
                     }
                     else
                     {
-                        uint packMask = casp.OutfitID & 0x7FFF0000;
-                        casp.OutfitID = outfitID | packMask;
+                        casp.OutfitID = outfitID;
                     }
                     string orig_partname = casp.PartName;
                     casp.PartName = NewMeshName.Text + "_" + row.Cells["SwatchName"].Value;
