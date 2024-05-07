@@ -1139,4 +1139,64 @@
   <data name="axEarsUp_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\axEarsUp_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="iuHead_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iuHead_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, iublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="iuHead_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iuHead_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, iublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="iuHead_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iuHead_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, iublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="iuHead_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iuHead_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, iublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="iuShoes_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iuShoes_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, iublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="iuShoes_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iuShoes_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, iublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="iuShoes_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iuShoes_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, iublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="iuShoes_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iuShoes_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, iublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="iuBottom_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iuBottom_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, iublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="iuBottom_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iuBottom_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, iublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="iuBottom_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iuBottom_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, iublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="iuBottom_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iuBottom_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, iublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="iuTop_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iuTop_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, iublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="iuTop_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iuTop_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, iublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="iuTop_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iuTop_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, iublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="iuTop_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iuTop_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, iublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="iuBody_lod0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iuBody_lod0.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, iublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="iuBody_lod1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iuBody_lod1.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, iublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="iuBody_lod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iuBody_lod2.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, iublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="iuBody_lod3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iuBody_lod3.simgeom;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, iublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
