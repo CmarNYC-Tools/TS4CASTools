@@ -337,8 +337,16 @@ namespace XMODS
                 }
             }
             string TS4FilesPath = Properties.Settings.Default.TS4Path;
-            string[] paths = Directory.GetFiles(TS4FilesPath, "*.package", SearchOption.AllDirectories);
-            if (paths.Length == 0)
+            var paths = Directory.GetFiles(TS4FilesPath, "*.package", SearchOption.AllDirectories).ToList();
+            
+            if(Path.GetFileName(TS4FilesPath) == "Contents"){
+                var appPath = Path.GetDirectoryName(Path.GetDirectoryName(TS4FilesPath));
+                var packs = Path.Combine(appPath, "The Sims 4 Packs");
+                if(Directory.Exists(packs)){
+                    paths.AddRange(Directory.GetFiles(packs, "*.package", SearchOption.AllDirectories));
+                }
+            }
+            if (paths.Count == 0)
             {
                 MessageBox.Show("Can't find game packages! Please go to File / Change Settings and correct the game packages path or make it blank to reset, then restart.");
                 return;
