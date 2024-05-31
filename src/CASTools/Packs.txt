@@ -73,5 +73,9 @@ SP46 Home Chef Hustle
 SP47 Castle Estate
 SP48 Goth Galore
 SP49 Crystal Creations
+SP50 Urban Homage
+SP51 Party Essentials
+SP52 Riviera Retreat
+SP53 Cozy Bistro
 FP01 Holiday Celebration Pack
 FP02 Grims Ghoulish Guitar Pack
