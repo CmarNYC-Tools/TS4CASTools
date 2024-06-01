@@ -250,7 +250,7 @@ namespace XMODS
                 previewMorph_comboBox.SelectedIndexChanged -= previewMorph_comboBox_SelectedIndexChanged;
                 previewMorph_comboBox.Items.Clear();
                 previewMorph_comboBox.Enabled = true;
-                if (myCASP.Age >= XmodsEnums.Age.Teen && myCASP.Age <= XmodsEnums.Age.Elder)
+                if ((myCASP.Age & XmodsEnums.Age.TeenToElder) > 0 && (myCASP.Age & ~XmodsEnums.Age.TeenToElder) == 0)
                 {
                     if (gender == XmodsEnums.Gender.Female)
                     {
@@ -268,6 +268,10 @@ namespace XMODS
                 else if (myCASP.Age == XmodsEnums.Age.Toddler)
                 {
                     previewMorph_comboBox.Items.AddRange(MorphNamesToddler);
+                }
+                else if (myCASP.Age == XmodsEnums.Age.Infant)
+                {
+                    previewMorph_comboBox.Items.AddRange(MorphNamesInfant);
                 }
                 if (previewMorph_comboBox.Items.Count > 0)
                 {

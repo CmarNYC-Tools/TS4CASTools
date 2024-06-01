@@ -80,6 +80,7 @@ namespace XMODS
         string[] GenderNames = new string[] { "Male", "Female" };
         uint[] GenderValues = new uint[] { 1, 2 };
 
+        string[] MorphNamesInfant = new string[] { "None", "iuBody_Heavy", "iuBody_Lean" };
         string[] MorphNamesToddler = new string[] { "None", "puBody_Heavy", "puBody_Lean" };
         string[] MorphNamesChild = new string[] { "None", "cuBody_Heavy", "cuBody_Lean" };
         string[] MorphNamesAdultFemale = new string[] { "None", 
