@@ -13,6 +13,7 @@ EP12 High School Years
 EP13 Growing Together
 EP14 Horse Ranch
 EP15 For Rent
+EP16 Lovestruck
 GP01 Outdoor Retreat
 GP02 Spa Day
 GP03 Dine Out
@@ -25,7 +26,6 @@ GP09 Star Wars Journey to Batuu
 GP10 Dream Home Decorator
 GP11 My Wedding Stories
 GP12 Werewolves
-GP13 Growing Together
 SP01 Luxury Party Stuff
 SP02 Perfect Patio Stuff
 SP03 Cool Kitchen Stuff
@@ -77,5 +77,7 @@ SP50 Urban Homage
 SP51 Party Essentials
 SP52 Riviera Retreat
 SP53 Cozy Bistro
+SP54 Artist Studio
+SP55 Storybook Nursery
 FP01 Holiday Celebration Pack
 FP02 Grims Ghoulish Guitar Pack
