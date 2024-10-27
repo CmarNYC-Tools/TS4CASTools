@@ -14,6 +14,7 @@ EP13 Growing Together
 EP14 Horse Ranch
 EP15 For Rent
 EP16 Lovestruck
+EP17 Life & Death
 GP01 Outdoor Retreat
 GP02 Spa Day
 GP03 Dine Out
@@ -79,5 +80,7 @@ SP52 Riviera Retreat
 SP53 Cozy Bistro
 SP54 Artist Studio
 SP55 Storybook Nursery
+SP56 Sweet Slumber Party
+SP57 Cozy Kitsch
 FP01 Holiday Celebration Pack
 FP02 Grims Ghoulish Guitar Pack
