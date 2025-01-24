@@ -8,6 +8,7 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <RootNamespace>XmodsDataLib</RootNamespace>
     <AssemblyName>XmodsDataLib</AssemblyName>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
     <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <LangVersion>11.0</LangVersion>

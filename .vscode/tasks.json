@@ -43,6 +43,20 @@
                 "-c:Release"
             ],
             "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "wine 🍷",
+            "command": "wine",
+            "type": "process",
+            "options": {
+                "cwd": "${workspaceFolder}/src/CASTools/bin/Debug/net8.0-windows/win-x64/"
+            },
+            "dependsOn":[
+                "buildn"
+            ],
+            "args":[
+                "S4CASTools.exe"
+            ]
         }
     
     ]
