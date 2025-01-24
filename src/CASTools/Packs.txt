@@ -79,5 +79,12 @@ SP52 Riviera Retreat
 SP53 Cozy Bistro
 SP54 Artist Studio
 SP55 Storybook Nursery
+SP56 Sweet Slumber Party
+SP57 Cozy Kitsch
+SP58 Comfy Gamer
+SP59 Secret Sanctuary
+SP60 Casanova Cave
+SP61 Refined Living Room
+SP62 Business Chic
 FP01 Holiday Celebration Pack
 FP02 Grims Ghoulish Guitar Pack
