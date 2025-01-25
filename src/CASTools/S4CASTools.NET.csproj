@@ -31,9 +31,7 @@
     <NeutralLanguage>en</NeutralLanguage>
     <Description></Description>
     <Copyright>Copyright ©  2014</Copyright>
-
     <DefineConstants>$(DefineConstants);NETCORE</DefineConstants>
-    <S4PI_LIB>/Users/a/cmar/s4pi</S4PI_LIB>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>

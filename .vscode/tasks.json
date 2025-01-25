@@ -10,7 +10,7 @@
             "label": "buildn",
             "options": { "statusbar": {"hide": true}},
             "command": "dotnet",
-            "type": "process",
+            "type": "shell",
             "args": [
                 "build",
                 "${workspaceFolder}/src/CASTools/S4CASTools.NET.csproj",
