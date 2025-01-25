@@ -1331,8 +1331,8 @@ namespace Xmods.DataLib
             Fingernails = 0x49,
             Toenails = 0x4A,
             HairColor = 0x4B,
-            Unknown1 = 0x4C,
-            Unknown2 = 0x4D,
+            Bite = 0x4C,
+            BodyFreckles = 0x4D,
             BodyHairArm = 0x4E,
             BodyHairLeg = 0x4F,
             BodyHairTorsoFront = 0x50,
@@ -1343,9 +1343,9 @@ namespace Xmods.DataLib
             BodyScarTorsoBack = 0x55,
             BodyScarLegLeft = 0x56,
             BodyScarLegRight = 0x57,
-            Unknown3 = 0x58,
+            AttachmentBack = 0x58,
             TeenAcne = 0x59,
-            Unknown4 = 0x5A,
+            ScarFace = 0x5A,
             BirthmarkFace = 0x5B,
             BirthmarkTorsoBack = 0x5C,
             BirthmarkTorsoFront = 0x5D,
@@ -1369,6 +1369,7 @@ namespace Xmods.DataLib
             HairFeathers,
             Horn,
             TailBase,
+            BirthmarkOccult,
         }
 
          public enum BodySubType
