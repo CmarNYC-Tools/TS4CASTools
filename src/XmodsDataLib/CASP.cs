@@ -52,6 +52,7 @@ namespace Xmods.DataLib
                                 // 1 bit DefaultForBodyTypeFemale
                                 // 1 bit DefaultForBodyTypeMale
                                 // 1 bit RestrictOppositeFrame
+        ushort layerID; //EP18 patch
         ulong excludePartFlags; // parts removed
         ulong excludePartFlags2;         // v0x29
         ulong excludeModifierRegionFlags;
@@ -122,7 +123,7 @@ namespace Xmods.DataLib
                               // --repeat(count)
         TGI[] IGTtable;
 
-        public const uint currentVersion = 0x31;
+        public const uint currentVersion = 0x32;
 
         public bool UpdateToLatestVersion()
         {
@@ -200,6 +201,9 @@ namespace Xmods.DataLib
             if(this.version < 0x31)
             {
                 colorShiftMaskIndex = (byte)this.EmptyLink;
+            }
+            if(this.version < 0x32){
+                layerID = 0;
             }
 
             if (legacyCompatible)
@@ -318,6 +322,10 @@ namespace Xmods.DataLib
         {
             get { return this.parameterFlags2; }
             set { this.parameterFlags2 = value; }
+        }
+        public ushort LayerID{
+            get { return this.layerID; }
+            set { this.layerID = value; }
         }
         public bool FlagDefaultForBodyTypeFemale
         {
@@ -889,6 +897,7 @@ namespace Xmods.DataLib
             materialHash = br.ReadUInt32();
             parameterFlags = br.ReadByte();
             if (this.version >= 39) parameterFlags2 = br.ReadByte();
+            if (this.version >= 50) layerID = br.ReadUInt16();
             excludePartFlags = br.ReadUInt64();
             if (version >= 41)
             {
@@ -1040,6 +1049,7 @@ namespace Xmods.DataLib
             bw.Write(materialHash);
             bw.Write(parameterFlags);
             if (this.version >= 39) bw.Write(parameterFlags2);
+            if (this.version >= 50) bw.Write(layerID);
             bw.Write(excludePartFlags);
             if (version >= 41)
             {
