@@ -2,7 +2,7 @@
     "version": "2.0.0",
     "options": {
         "env": {
-            "CAS_TOOLS_VERSION":"3.8.2.6"
+            "CAS_TOOLS_VERSION":"3.8.2.7"
         }
     },
     "tasks": [
@@ -15,7 +15,8 @@
                 "build",
                 "${workspaceFolder}/src/CASTools/S4CASTools.NET.csproj",
                 "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+                "/consoleloggerparameters:NoSummary",
+                "-f:net6.0-windows",
             ],
             "problemMatcher": "$msCompile"
         },
@@ -39,8 +40,9 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/src/CASTools/S4CASTools.csproj",
-                "-c:Release"
+                "${workspaceFolder}/src/CASTools/S4CASTools.NET.csproj",
+                "-c:Release",
+                "-f:net6.0-windows"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -49,7 +51,10 @@
             "command": "wine",
             "type": "process",
             "options": {
-                "cwd": "${workspaceFolder}/src/CASTools/bin/Debug/net8.0-windows/win-x64/"
+                "cwd": "${workspaceFolder}/src/CASTools/bin/Debug/net6.0-windows/win-x64/",
+                "env": {
+                    "WINEDEBUG":"-all"
+                }
             },
             "dependsOn":[
                 "buildn"
