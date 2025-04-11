@@ -1370,6 +1370,7 @@ namespace Xmods.DataLib
             Horn,
             TailBase,
             BirthmarkOccult,
+            TattooHead
         }
 
          public enum BodySubType
