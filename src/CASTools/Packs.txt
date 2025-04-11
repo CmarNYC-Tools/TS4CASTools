@@ -88,5 +88,7 @@ SP59 Secret Sanctuary
 SP60 Casanova Cave
 SP61 Refined Living Room
 SP62 Business Chic
+SP63 Sleek Bathroom
+SP64 Sweet Allure
 FP01 Holiday Celebration Pack
 FP02 Grims Ghoulish Guitar Pack
