@@ -16,6 +16,7 @@ EP15 For Rent
 EP16 Lovestruck
 EP17 Life & Death
 EP18 Businesses & Hobbies
+EP19 Enchanted by Nature
 GP01 Outdoor Retreat
 GP02 Spa Day
 GP03 Dine Out
@@ -90,5 +91,10 @@ SP61 Refined Living Room
 SP62 Business Chic
 SP63 Sleek Bathroom
 SP64 Sweet Allure
+SP65 Restoration Workshop
+SP66 Golden Years
+SP67 Kitchen Clutter
+SP71 Grange Mudroom
+SP72 Essential Glam
 FP01 Holiday Celebration Pack
 FP02 Grims Ghoulish Guitar Pack
