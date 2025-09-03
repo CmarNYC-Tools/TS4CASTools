@@ -44,7 +44,7 @@ namespace XMODS
         bool changesRecolor = false, changesGeneral = false, changesThumbs = false, changesMesh = false, changesRegion = false, changesSliders = false, changesHairColor = false;
         DSTResource mySwatch;
         Object myTexture;
-        RLEResource myShadow, mySpecular, myColorShiftMask;
+        AResource myShadow, mySpecular, myColorShiftMask;
         DdsFile ddsSwatch, ddsTexture, ddsShadow, ddsSpecular, ddsColorShiftMask;
         Image textureImage, specularImage, shadowImage, bumpmapImage, glowImage, colorShiftMaskImage;
         IResourceIndexEntry iresSwatch, iresTexture, iresShadow, iresSpecular, iresColorShiftMask;
@@ -1353,10 +1353,10 @@ namespace XMODS
             myTexture = FindCloneTexture(myCASP.LinkList[myCASP.TextureIndex], out iresTexture, out clonedTexture);
             if (myTexture != null)
             {
-                if (myTexture is RLEResource)
+                if (myTexture is AResource ar)
                 {
                     ddsTexture = new DdsFile();
-                    ddsTexture.Load((myTexture as RLEResource).ToDDS(), false);
+                    ddsTexture.Load(ar.ToDDS(), false);
                     textureImage = new Bitmap(ddsTexture.Image);
                     CloneColorTexture_pictureBox.Image = textureImage;
                 }
@@ -1464,6 +1464,10 @@ namespace XMODS
             {
                 IResourceKey ik = new TGIBlock(0, null, newtgi.Type, newtgi.Group, newtgi.Instance);
                 iresTexture = clonePack.AddResource(ik, (myTexture as RLEResource).Stream, true);
+            }else if (myTexture is DSTResource)
+            {
+                IResourceKey ik = new TGIBlock(0, null, newtgi.Type, newtgi.Group, newtgi.Instance);
+                iresTexture = clonePack.AddResource(ik, (myTexture as DSTResource).Stream, true);
             }
             else if (myTexture is LRLE)
             {
@@ -1709,6 +1713,9 @@ namespace XMODS
                     if (myTexture is RLEResource)
                     {
                         iresTexture = clonePack.AddResource(ik, (myTexture as RLEResource).Stream, true);
+                    }else if (myTexture is DSTResource)
+                    {
+                        iresTexture = clonePack.AddResource(ik, (myTexture as DSTResource).Stream, true);
                     }
                     else if (myTexture is LRLE)
                     {
@@ -2191,7 +2198,7 @@ namespace XMODS
             return null;
         }
 
-        private RLEResource FindCloneTextureRLE(TGI tgi, out IResourceIndexEntry foundKey, out bool inClonePack)
+        private AResource FindCloneTextureRLE(TGI tgi, out IResourceIndexEntry foundKey, out bool inClonePack)
         {
             if (tgi.Type == 0 & tgi.Group == 0 & tgi.Instance == 0)
             {
@@ -2208,10 +2215,14 @@ namespace XMODS
                 {
                     inClonePack = true;
                     foundKey = ctex;
-                    return new RLEResource(1, clonePack.GetResource(ctex));
+                    return (XmodsEnums.ResourceTypes)ctex.ResourceType switch
+                    {
+                        XmodsEnums.ResourceTypes.DDS => new DSTResource(1, clonePack.GetResource(ctex)),
+                        _ => new RLEResource(1, clonePack.GetResource(ctex))
+                    };
                 }
             }
-            foreach (Package p in gamePacksOther)
+            foreach (Package p in gamePacksOther.Union(gamePacks0))
             {
                 IResourceIndexEntry ptex = p.Find(itex);
                 if (ptex != null)
@@ -2219,18 +2230,12 @@ namespace XMODS
                     inClonePack = false;
                     foundKey = ptex;
                     Stream s = p.GetResource(ptex);
-                    if (s.Length > 0) return new RLEResource(1, s);
-                }
-            }
-            foreach (Package p in gamePacks0)
-            {
-                IResourceIndexEntry ptex = p.Find(itex);
-                if (ptex != null)
-                {
-                    inClonePack = false;
-                    foundKey = ptex;
-                    Stream s = p.GetResource(ptex);
-                    if (s.Length > 0) return new RLEResource(1, s);
+                    if (s.Length > 0)
+                        return (XmodsEnums.ResourceTypes)ptex.ResourceType switch
+                        {
+                            XmodsEnums.ResourceTypes.DDS => new DSTResource(1, s),
+                            _ => new RLEResource(1, s)
+                        };
                 }
             }
             inClonePack = false;
@@ -2249,6 +2254,8 @@ namespace XMODS
             Predicate<IResourceIndexEntry> itexL = r => r.ResourceType == (uint)XmodsEnums.ResourceTypes.LRLE &
                                     r.ResourceGroup == tgi.Group & r.Instance == tgi.Instance;
             Predicate<IResourceIndexEntry> itexR = r => r.ResourceType == (uint)XmodsEnums.ResourceTypes.DXT5RLE2 &
+                                    r.ResourceGroup == tgi.Group & r.Instance == tgi.Instance;
+            Predicate<IResourceIndexEntry> itexD = r => r.ResourceType == (uint)XmodsEnums.ResourceTypes.DDS &
                                     r.ResourceGroup == tgi.Group & r.Instance == tgi.Instance;
             if (clonePack != null)
             {
@@ -2288,6 +2295,24 @@ namespace XMODS
                         catch
                         {
                             return null;
+                        }
+                    }
+                    else
+                    {
+                        IResourceIndexEntry dtex = clonePack.Find(itexD);
+                        if (dtex != null)
+                        {
+                            inClonePack = true;
+                            foundKey = dtex;
+                            try
+                            {
+                                return new DSTResource(1, clonePack.GetResource(dtex));
+                            }
+                            catch
+                            {
+                                return null;
+
+                            }
                         }
                     }
                 }
@@ -2334,6 +2359,28 @@ namespace XMODS
                     foundKey = ptex;
                     Stream s = p.GetResource(ptex);
                     if (s.Length > 0) return new RLEResource(1, s);
+                }
+            }
+            foreach (Package p in gamePacksOther)           //search game packs for DST
+            {
+                IResourceIndexEntry ptex = p.Find(itexD);
+                if (ptex != null)
+                {
+                    inClonePack = false;
+                    foundKey = ptex;
+                    Stream s = p.GetResource(ptex);
+                    if (s.Length > 0) return new DSTResource(1, s);
+                }
+            }
+            foreach (Package p in gamePacks0)
+            {
+                IResourceIndexEntry ptex = p.Find(itexD);
+                if (ptex != null)
+                {
+                    inClonePack = false;
+                    foundKey = ptex;
+                    Stream s = p.GetResource(ptex);
+                    if (s.Length > 0) return new DSTResource(1, s);
                 }
             }
 
@@ -2476,9 +2523,9 @@ namespace XMODS
         private void CloneColorTexture_pictureBox_Click(object sender, EventArgs e)
         {
             ImageDisplayImportExport imgDisplay;
-            if (myTexture is RLEResource)
+            if (myTexture is AResource)
             {
-                imgDisplay = new ImageDisplayImportExport((RLEResource)myTexture, ImageType.Material, "Import/Export Diffuse/Material Texture", myCASP.Species, myCASP.BodyType, IsMakeup(myCASP));
+                imgDisplay = new ImageDisplayImportExport((AResource)myTexture, ImageType.Material, "Import/Export Diffuse/Material Texture", myCASP.Species, myCASP.BodyType, IsMakeup(myCASP));
             }
             else if (myTexture is LRLE)
             {

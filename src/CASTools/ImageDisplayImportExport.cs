@@ -67,6 +67,52 @@ namespace XMODS
             get { return this.CloneTextureLRLE_checkBox.Checked; }
         }
 
+        public ImageDisplayImportExport(AResource aImage, Form1.ImageType imageType, string windowTitle, XmodsEnums.Species species, XmodsEnums.BodyType type, bool useLRLE= false)
+        {
+            InitializeComponent();
+            this.Text = windowTitle;
+            this.species = species;
+            bodyType = type;
+            dds = new DdsFile();
+            switch (aImage)
+            {
+                case DSTResource dstImage:
+                    if (dstImage != null)
+                    {
+                        dst = new DSTResource(1, dstImage.Stream);
+                        DSTResource tmp = new DSTResource(1, dstImage.Stream);
+                        dds.Load(tmp.ToDDS(), false);
+                        img = dds.Image;
+                    }
+                    else
+                    {
+                        dst = null;
+                        dds = null;
+                        img = null;
+                    }
+                    break;
+                case RLEResource rleImage:
+                    if (rleImage != null)
+                    {
+                        rle = new RLEResource(1, rleImage.Stream);
+                        dds.Load(rleImage.ToDDS(), false);
+                        img = dds.Image;
+                    }
+                    else
+                    {
+                        rle = null;
+                        dds = null;
+                        img = null;
+                    }
+                    if (imageType == Form1.ImageType.Material)
+                    {
+                        CloneTextureLRLE_checkBox.Enabled = true;
+                        CloneTextureLRLE_checkBox.Checked = useLRLE;
+                    }
+                    break;
+            }
+            DoSetup(img, imageType);
+        }
         public ImageDisplayImportExport(LRLE lrleImage, Form1.ImageType imageType, string windowTitle, XmodsEnums.Species species, XmodsEnums.BodyType type)
         {
             InitializeComponent();
@@ -78,56 +124,6 @@ namespace XMODS
             img = lrleImage != null ? lrleImage.image : null;
             CloneTextureLRLE_checkBox.Enabled = true;
             CloneTextureLRLE_checkBox.Checked = true;
-            DoSetup(img, imageType);
-        }
-        
-        public ImageDisplayImportExport(RLEResource rleImage, Form1.ImageType imageType, string windowTitle, XmodsEnums.Species species, XmodsEnums.BodyType type, bool useLRLE)
-        {
-            InitializeComponent();
-            this.Text = windowTitle;
-            this.species = species;
-            bodyType = type;
-            dds = new DdsFile();
-            if (rleImage != null)
-            {
-                rle = new RLEResource(1, rleImage.Stream);
-                dds.Load(rleImage.ToDDS(), false);
-                img = dds.Image;
-            }
-            else
-            {
-                rle = null;
-                dds = null;
-                img = null;
-            }
-            if (imageType == Form1.ImageType.Material)
-            {
-                CloneTextureLRLE_checkBox.Enabled = true;
-                CloneTextureLRLE_checkBox.Checked = useLRLE;
-            }
-            DoSetup(img, imageType);
-        }
-
-        public ImageDisplayImportExport(DSTResource dstImage, Form1.ImageType imageType, string windowTitle, XmodsEnums.Species species, XmodsEnums.BodyType type)
-        {
-            InitializeComponent();
-            this.Text = windowTitle;
-            this.species = species;
-            bodyType = type;
-            dds = new DdsFile();
-            if (dstImage != null)
-            {
-                dst = new DSTResource(1, dstImage.Stream);
-                DSTResource tmp = new DSTResource(1, dstImage.Stream);
-                dds.Load(tmp.ToDDS(), false);
-                img = dds.Image;
-            }
-            else
-            {
-                dst = null;
-                dds = null;
-                img = null;
-            }
             DoSetup(img, imageType);
         }
 

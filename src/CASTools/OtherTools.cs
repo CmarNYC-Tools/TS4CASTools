@@ -1802,7 +1802,7 @@ namespace XMODS
                             TGI link = sculpt.textureRef;
                             IResourceIndexEntry key;
                             bool dummy;
-                            RLEResource rle = FindCloneTextureRLE(link, out key, out dummy);
+                            RLEResource rle = (RLEResource)FindCloneTextureRLE(link, out key, out dummy);
                             if (rle != null && !dummy) newpack.AddResource(key, rle.Stream, true);
                         }
                         catch { }
