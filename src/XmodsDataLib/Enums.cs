@@ -404,6 +404,7 @@ namespace Xmods.DataLib
             SimEyelashes = 0x9d9da161,
             SimEyes	= 0xcf8a70b4,
             SimGlass = 0x5EDA9CDE,
+            SimWings = 0x941695AE,
             SimHair	= 0x84fd7152,
             SimHairVisualizer	= 0x109defb6,
             SimHorse    = 0x05F75EF1,
@@ -457,6 +458,7 @@ namespace Xmods.DataLib
             SimSkin = 0x548394B9,
             Additive = 0x5AF16731,
             SimGlass = 0x5EDA9CDE,
+            SimWings = 0x941695AE,
             Fence = 0x67107FE8,
             LotImposter = 0x68601DE3,
             Blueprint = 0x6864A45E,
@@ -489,7 +491,8 @@ namespace Xmods.DataLib
         public enum SimShader : uint
         {
             SimSkin = 0x548394B9,
-            SimGlass = 0x5EDA9CDE,
+            SimGlass = 0x5EDA9CDE,            
+            SimWings = 0x941695AE,
             SimGhost = 0x9516A357,
             Phong = 0xB9105A6D
         }
@@ -1370,7 +1373,10 @@ namespace Xmods.DataLib
             Horn,
             TailBase,
             BirthmarkOccult,
-            TattooHead
+            TattooHead,
+            Wings,
+            HeadDeco,
+            SkinSpecularity,
         }
 
          public enum BodySubType
@@ -1453,9 +1459,9 @@ namespace Xmods.DataLib
              SecondaryEyeColor = 1ul << 63
          }
 
-         [Flags]
-         public enum ExcludePartFlag2 : ulong
-         {
+        [Flags]
+        public enum ExcludePartFlag2 : ulong
+        {
             OccultBrow = 1,
             OccultEyeSocket = 1ul << 1,
             OccultEyeLid = 1ul << 2,
@@ -1466,7 +1472,51 @@ namespace Xmods.DataLib
             SkinDetailScar = 1ul << 7,
             SkinDetailAcne = 1ul << 8,
             Fingernails = 1ul << 9,
-            Toenails = 1ul << 10
+            Toenails = 1ul << 10,
+
+            HairColor = 1ul << 11,
+            Bite = 1ul << 12,
+            BodyFreckles = 1ul << 13,
+            BodyHairArm = 1ul << 14,
+            BodyHairLeg = 1ul << 15,
+            BodyHairTorsoFront = 1ul << 16,
+            BodyHairTorsoBack = 1ul << 17,
+            BodyScarArmLeft = 1ul << 18,
+            BodyScarArmRight = 1ul << 19,
+            BodyScarTorsoFront = 1ul << 20,
+            BodyScarTorsoBack = 1ul << 21,
+            BodyScarLegLeft = 1ul << 22,
+            BodyScarLegRight = 1ul << 23,
+            AttachmentBack = 1ul << 24,
+            TeenAcne = 1ul << 25,
+            ScarFace = 1ul << 26,
+            BirthmarkFace = 1ul << 27,
+            BirthmarkTorsoBack = 1ul << 28,
+            BirthmarkTorsoFront = 1ul << 29,
+            BirthmarkArms = 1ul << 30,
+            MoleFace = 1ul << 31,
+            MoleChestUpper = 1ul << 32,
+            MoleBackUpper = 1ul << 33,
+            BirthmarkLegs = 1ul << 34,
+            StretchMarksFront = 1ul << 35,
+            StretchMarksBack = 1ul << 36,
+            
+            Saddle = 1ul << 37,
+            Bridle = 1ul << 38,
+            Reins = 1ul << 39,
+            Blanket = 1ul << 40,
+            SkinDetailHoofColor = 1ul << 41,
+            HairMane = 1ul << 42,
+            HairTail = 1ul << 43,
+            HairForelock = 1ul << 44,
+            HairFeathers = 1ul << 45,
+            Horn = 1ul << 46,
+            TailBase = 1ul << 47,
+            BirthmarkOccult = 1ul << 48,
+            TattooHead = 1ul << 49,
+            Wings = 1ul << 50,
+            HeadDeco = 1ul << 51,
+            SkinSpecularity = 1ul << 52,
          }
 
         public enum CASPartRegionTS4 : uint
