@@ -168,24 +168,26 @@ namespace XMODS
 
         private void ProgramSetup()
         {
-            bodyTypeNames = new List<string> { 
-                "All", "Hat", "Hair", "Head", "Teeth", "Body", "Top", 
-                "Bottom", "Shoes", "Earrings", "Glasses", "Necklace", "Gloves", 
+            bodyTypeNames = new List<string> {
+                "All", "Hat", "Hair", "Head", "Teeth", "Body", "Top",
+                "Bottom", "Shoes", "Earrings", "Glasses", "Necklace", "Gloves",
                 "Bracelet", "Piercing", "Ring", "Facial Hair", "Makeup", "Facepaint",
-                "Eyebrows", "Eyecolor", "Socks", "Skin Details", 
-                "Skin Overlay", "Tights", "Tattoo", "Fur", 
-                "Animal Ears", "Tail", "Nose Color", "Secondary Eye Color", "Occult", 
-                "Fingernails", "Toenails", "Body Hair", "Body Scar"
+                "Eyebrows", "Eyecolor", "Socks", "Skin Details",
+                "Skin Overlay", "Tights", "Tattoo", "Fur",
+                "Animal Ears", "Tail", "Nose Color", "Secondary Eye Color", "Occult",
+                "Fingernails", "Toenails", "Body Hair", "Body Scar",
+                "Wings"
             };
             bodyTypeValues = new List<uint>[] {
-            new List<uint> { 0 }, new List<uint> { 1 }, new List<uint> { 2 }, new List<uint> { 3 }, new List<uint> { 4 }, new List<uint> { 5 }, new List<uint> { 6 },
+            new List<uint> { 0 }, new List<uint> { 1,(uint)XmodsEnums.BodyType.HeadDeco  }, new List<uint> { 2 }, new List<uint> { 3 }, new List<uint> { 4 }, new List<uint> { 5 }, new List<uint> { 6 },
             new List<uint> { 7 }, new List<uint> { 8 }, new List<uint> { 0x0A }, new List<uint> { 0x0B }, new List<uint> { 0x0C }, new List<uint> { 0x0D },
-            new List<uint> { 0x0E, 0x0F }, new List<uint> { 0x10, 0x11, 0x12, 0x13, 0x14, 0x15 }, new List<uint> { 0x16, 0x17, 0x18, 0x19, 0x1A, 0x1B }, 
-            new List<uint> { 0x1C }, new List<uint> { 0x1D, 0x1E, 0x1F, 0x20, 0x25 },  new List<uint> { 0x21 }, 
-            new List<uint> { 0x22 }, new List<uint> { 0x23 }, new List<uint> { 0x24 }, new List<uint> { 0x26, 0x27, 0x28, 0x29, 0x2B, 0x2C, 0x37, 0x38, 0x39, 0x47, 0x48 }, 
-            new List<uint> { 0x3A }, new List<uint> { 0x2A }, new List<uint> { 0x2D, 0x2E, 0x2F, 0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36 }, new List<uint> { 0x3B },
-            new List<uint> { 0x3C }, new List<uint> { 0x3D }, new List<uint> { 0x3E }, new List<uint> { 0x3F }, new List<uint> { 0x40, 0x41, 0x42, 0x43, 0x44, 0x45, 0x46 }, 
-            new List<uint> { 0x49 }, new List<uint> { 0x4A }, new List<uint> { 0x4E, 0x4F, 0x50, 0x51 }, new List<uint> { 0x52, 0x53, 0x54, 0x55, 0x56, 0x57 }
+            new List<uint> { 0x0E, 0x0F }, new List<uint> { 0x10, 0x11, 0x12, 0x13, 0x14, 0x15 }, new List<uint> { 0x16, 0x17, 0x18, 0x19, 0x1A, 0x1B },
+            new List<uint> { 0x1C }, new List<uint> { 0x1D, 0x1E, 0x1F, 0x20, 0x25 },  new List<uint> { 0x21 },
+            new List<uint> { 0x22 }, new List<uint> { 0x23 }, new List<uint> { 0x24 }, new List<uint> { 0x26, 0x27, 0x28, 0x29, 0x2B, 0x2C, 0x37, 0x38, 0x39, 0x47, 0x48 },
+            new List<uint> { 0x3A }, new List<uint> { 0x2A }, new List<uint> { 0x2D, 0x2E, 0x2F, 0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, (uint)XmodsEnums.BodyType.TattooHead }, new List<uint> { 0x3B },
+            new List<uint> { 0x3C }, new List<uint> { 0x3D }, new List<uint> { 0x3E }, new List<uint> { 0x3F }, new List<uint> { 0x40, 0x41, 0x42, 0x43, 0x44, 0x45, 0x46 },
+            new List<uint> { 0x49 }, new List<uint> { 0x4A }, new List<uint> { 0x4E, 0x4F, 0x50, 0x51 }, new List<uint> { 0x52, 0x53, 0x54, 0x55, 0x56, 0x57 },
+            new List<uint>{ (uint)XmodsEnums.BodyType.Wings }
             };
 
             try
@@ -940,13 +942,13 @@ namespace XMODS
                 List<string> pathsClient = new List<string>(Directory.GetFiles(TS4FilesPath, "Client*Build0.package", SearchOption.AllDirectories));
                 
                 if(Path.GetFileName(TS4FilesPath) == "Contents"){
-                    var appPath = Path.GetDirectoryName(Path.GetDirectoryName(TS4FilesPath));
+                var appPath = Path.GetDirectoryName(Path.GetDirectoryName(TS4FilesPath));
                     var packs = Path.Combine(appPath, "The Sims 4 Packs");
                     if(Directory.Exists(packs)){
-                        pathsSim.AddRange(Directory.GetFiles(packs, "Simulation*Build*.package", SearchOption.AllDirectories));
-                        pathsClient.AddRange(Directory.GetFiles(packs, "Client*Build*.package", SearchOption.AllDirectories));
-                    }
-
+                    pathsSim.AddRange(Directory.GetFiles(packs, "Simulation*Build*.package", SearchOption.AllDirectories));
+                    pathsClient.AddRange(Directory.GetFiles(packs, "Client*Build*.package", SearchOption.AllDirectories));
+                }
+                
                 }
                 pathsSim.Sort();
                 pathsClient.Sort();
