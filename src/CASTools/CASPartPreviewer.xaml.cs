@@ -52,6 +52,7 @@ namespace XMODS
         Viewport3D myViewport = new Viewport3D();
         GeometryModel3D[] myMeshes = null;
         bool[] isGlass = null;
+        bool[] isWings = null;
         GeometryModel3D myHead = new GeometryModel3D();
         GeometryModel3D myTop = new GeometryModel3D();
         GeometryModel3D myBottom = new GeometryModel3D();
@@ -69,6 +70,10 @@ namespace XMODS
         EmissiveMaterial myGlowmap = new EmissiveMaterial();
         MaterialGroup myMaterials = new MaterialGroup();
         MaterialGroup glassMaterials = new MaterialGroup();
+        MaterialGroup wingMaterials = new MaterialGroup();
+        
+        DiffuseMaterial myWingDiffuse = new DiffuseMaterial();
+        SpecularMaterial myWingSpecular = new SpecularMaterial();
 
         int currentLod;
         XmodsEnums.Species currentSpecies;
@@ -125,22 +130,25 @@ namespace XMODS
             this.Height = myViewport.Height;
         }
 
-        internal void SimMeshes(GEOM[] simgeoms, out MeshGeometry3D[] meshGeometry, out bool[] isGlass)
+        internal void SimMeshes(GEOM[] simgeoms, out MeshGeometry3D[] meshGeometry, out bool[] isGlass, out bool[] isWings)
         {
             List<MeshGeometry3D> geoms = new List<MeshGeometry3D>();
             List<bool> glass = new List<bool>();
+            List<bool> wings = new List<bool>();
             foreach (GEOM g in simgeoms)
             {
                 geoms.Add(SimMesh(g));
-                glass.Add(g.ShaderType != XmodsEnums.Shader.SimSkin);
+                glass.Add(g.ShaderType == XmodsEnums.Shader.SimGlass);
+                wings.Add(g.ShaderType == XmodsEnums.Shader.SimWings);
             }
-           // MeshGeometry3D[] tmp = new MeshGeometry3D[2];
-           // tmp[0] = SimMesh(skinGeoms.ToArray());
-           // tmp[1] = SimMesh(glassGeoms.ToArray());
-           // return tmp;
+            // MeshGeometry3D[] tmp = new MeshGeometry3D[2];
+            // tmp[0] = SimMesh(skinGeoms.ToArray());
+            // tmp[1] = SimMesh(glassGeoms.ToArray());
+            // return tmp;
 
             meshGeometry = geoms.ToArray();
             isGlass = glass.ToArray();
+            isWings = wings.ToArray();
         }
 
         internal void SimMeshes(GEOM[] simgeoms, MorphMap deform_Shape, MorphMap deform_Normals, out MeshGeometry3D[] meshGeometry, out bool[] isGlass)
@@ -179,8 +187,9 @@ namespace XMODS
             float centerOffset = 0.80f;
 
             GEOM g = simgeom;
+            GEOM.GeometryState geostate = g.GeometryStates.FirstOrDefault() ?? new GEOM.GeometryState() { VertexCount = g.numberVertices, PrimitiveCount = g.numberFaces };
 
-            for (int i = 0; i < g.numberVertices; i++)
+            for (int i = geostate.MinVertexIndex; i < geostate.VertexCount; i++)
             {
                 float[] pos = g.getPosition(i);
                 float[] norm = g.getNormal(i);
@@ -240,7 +249,7 @@ namespace XMODS
                 uvs.Add(new Point(uv[0], uv[1]));
             } 
 
-            for (int i = 0; i < g.numberFaces; i++)
+            for (int i = geostate.StartIndex; i < geostate.PrimitiveCount; i++)
             {
                 int[] face = g.getFaceIndices(i);
                 facepoints.Add(face[0]);
@@ -295,9 +304,10 @@ namespace XMODS
             bool showHead, bool showTop, bool showBottom, bool showFeet, bool showUndies,
             bool showBody, bool showEars, bool showTail)
         {
-           // MeshGeometry3D[] simMesh = SimMeshes(simgeoms);
-           // skinMesh.Geometry = simMesh[0];
-           // glassMesh.Geometry = simMesh[1];
+            // MeshGeometry3D[] simMesh = SimMeshes(simgeoms);
+            // skinMesh.Geometry = simMesh[0];
+            // glassMesh.Geometry = simMesh[1];
+            var wingPreview = simgeoms.Any(x => x.ShaderType == XmodsEnums.Shader.SimWings);
 
             currentLod = lod;
             currentAge = age;
@@ -313,6 +323,7 @@ namespace XMODS
 
             myMaterials.Children.Clear();
             glassMaterials.Children.Clear();
+            wingMaterials.Children.Clear();
             mySkinColor = new DiffuseMaterial(new SolidColorBrush(skinColor));
             myMaterials.Children.Add(mySkinColor);
             if (showSkinOverlay) myMaterials.Children.Add(mySkin);
@@ -325,15 +336,31 @@ namespace XMODS
             }
             if (diffuseTexture != null)
             {
-                myDiffuse = new DiffuseMaterial(GetImageBrush(diffuseTexture));
-                myMaterials.Children.Add(myDiffuse);
-                glassMaterials.Children.Add(myDiffuse);
+                if (wingPreview)
+                {
+                    myWingDiffuse = new DiffuseMaterial(GetImageBrush(diffuseTexture));
+                    wingMaterials.Children.Add(myWingDiffuse);
+                }
+                else
+                {
+                    myDiffuse = new DiffuseMaterial(GetImageBrush(diffuseTexture));
+                    myMaterials.Children.Add(myDiffuse);
+                    glassMaterials.Children.Add(myDiffuse);
+                }
             }
             if (specularTexture != null)
             {
-                mySpecular = new SpecularMaterial(GetImageBrush(specularTexture), 25d);
-                myMaterials.Children.Add(mySpecular);
-                glassMaterials.Children.Add(mySpecular);
+                if (wingPreview)
+                {
+                    myWingSpecular = new SpecularMaterial(GetImageBrush(specularTexture), 25d);
+                    wingMaterials.Children.Add(mySpecular);
+                }
+                else
+                {
+                    mySpecular = new SpecularMaterial(GetImageBrush(specularTexture), 25d);
+                    myMaterials.Children.Add(mySpecular);
+                    glassMaterials.Children.Add(mySpecular);
+                }
             }
             if (bumpTexture != null)
             {
@@ -367,7 +394,7 @@ namespace XMODS
             if (showTail) modelGroup.Children.Add(myTail);
 
             MeshGeometry3D[] myGeoms;
-            SimMeshes(simgeoms, out myGeoms, out isGlass);
+            SimMeshes(simgeoms, out myGeoms, out isGlass, out isWings);
             myMeshes = new GeometryModel3D[myGeoms.Length];
             for (int i = 0; i < myMeshes.Length; i++)
             {
@@ -377,6 +404,10 @@ namespace XMODS
                 if (isGlass[i])
                 {
                     myMeshes[i].Material = glassMaterials;
+                }
+                else if (isWings[i])
+                {
+                    myMeshes[i].Material = wingMaterials;
                 }
                 else
                 {
@@ -700,6 +731,14 @@ namespace XMODS
             {
                 glassMaterials.Children.Remove(myDiffuse);
             }
+            if (showDiffuse && !wingMaterials.Children.Contains(myWingDiffuse))
+            {
+                wingMaterials.Children.Add(myWingDiffuse);
+            }
+            else if (!showDiffuse && wingMaterials.Children.Contains(myWingDiffuse))
+            {
+                wingMaterials.Children.Remove(myWingDiffuse);
+            }
         }
 
         public void SetSpecular(bool showSpecular)
@@ -719,6 +758,14 @@ namespace XMODS
             else if (!showSpecular && glassMaterials.Children.Contains(mySpecular))
             {
                 glassMaterials.Children.Remove(mySpecular);
+            }
+            if (showSpecular && !wingMaterials.Children.Contains(myWingSpecular))
+            {
+                wingMaterials.Children.Add(myWingSpecular);
+            }
+            else if (!showSpecular && glassMaterials.Children.Contains(mySpecular))
+            {
+                wingMaterials.Children.Remove(myWingSpecular);
             }
         }
 
@@ -817,7 +864,7 @@ namespace XMODS
             }
 
             MeshGeometry3D[] myGeoms;
-            SimMeshes(simgeoms, out myGeoms, out isGlass);
+            SimMeshes(simgeoms, out myGeoms, out isGlass, out isWings);
             myMeshes = new GeometryModel3D[myGeoms.Length];
             for (int i = 0; i < myMeshes.Length; i++)
             {
@@ -827,6 +874,10 @@ namespace XMODS
                 if (isGlass[i])
                 {
                     myMeshes[i].Material = glassMaterials;
+                }
+                else if (isWings[i])
+                {
+                    myMeshes[i].Material = wingMaterials;
                 }
                 else
                 {
@@ -882,6 +933,10 @@ namespace XMODS
                 if (isGlass[i])
                 {
                     myMeshes[i].Material = glassMaterials;
+                }
+                else if (isWings[i])
+                {
+                    myMeshes[i].Material = wingMaterials;
                 }
                 else
                 {
