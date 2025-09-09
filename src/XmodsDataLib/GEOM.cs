@@ -213,7 +213,7 @@ namespace Xmods.DataLib
             get
             {
                 bool b = false;
-                if (new string(this.magic) == "GEOM" && this.numVerts > 0 && (this.version == 5 || this.version == 12 || this.version == 13 || this.version == 14) && this.Fcount > 2)
+                if (new string(this.magic) == "GEOM" && this.numVerts > 0 && (this.version == 5 || this.version == 12 || this.version == 13 || this.version == 14 || this.version == 15) && this.Fcount > 2)
                 {
                     b = true;
                     int uvInd = 0;
@@ -1210,6 +1210,10 @@ namespace Xmods.DataLib
             {
                 this.TGIoff += 8 + this.UVStitches_size + this.slotrayAdjustments_size;
                 if (this.version >= 13) this.TGIoff += 4 + (this.seamStitchCount * 6);
+                if (this.version >= 15)
+                {
+                    this.TGIoff += sizeof(int) + (this.GeometryStates.Count * GeometryState.Size);
+                }
             }
             this.meshsize = this.TGIoff + 16 + (this.numtgi * 16);
             this.TGIsize = 4 + (this.numtgi * 16);
@@ -6410,6 +6414,12 @@ namespace Xmods.DataLib
 
         public class GeometryState 
         {
+            internal const int Size =
+                sizeof(uint) +  //State
+                sizeof(int) +  //StartIndex
+                sizeof(int) +  //MinVertexIndex
+                sizeof(int) +  //VertexCount
+                sizeof(int);  //PrimitiveCount 
             public uint State { get; set; }
 
             public int StartIndex { get; set; }
