@@ -17,6 +17,7 @@ EP16 Lovestruck
 EP17 Life & Death
 EP18 Businesses & Hobbies
 EP19 Enchanted by Nature
+EP20 Adventure Awaits
 GP01 Outdoor Retreat
 GP02 Spa Day
 GP03 Dine Out
@@ -94,7 +95,13 @@ SP64 Sweet Allure
 SP65 Restoration Workshop
 SP66 Golden Years
 SP67 Kitchen Clutter
+SP68 SpongeBob's House
+SP69 Autumn Apparel
+SP70 SpongeBob Kid's Room
 SP71 Grange Mudroom
 SP72 Essential Glam
+SP73 Modern Retreat
+SP74 Garden to Table
+SP81 Prairie Dreams
 FP01 Holiday Celebration Pack
 FP02 Grims Ghoulish Guitar Pack
