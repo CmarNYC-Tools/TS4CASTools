@@ -21,17 +21,19 @@
     <SuiteName>MeshTools</SuiteName>
     <ApplicationIcon>iconwhite2.ico</ApplicationIcon>
     <ApplicationRevision>0</ApplicationRevision>
-    <Version>$(CAS_TOOLS_VERSION)</Version>
-    <ApplicationDisplayVersion>$(CAS_TOOLS_VERSION)</ApplicationDisplayVersion>
-    <ApplicationVersion>$(CAS_TOOLS_VERSION)</ApplicationVersion>
     <Company></Company>
+    <Version>3.8.2.9</Version>
+    <Version_>$(Version.Replace(".","_"))</Version_>
+    <ApplicationDisplayVersion>$(Version)</ApplicationDisplayVersion>
+    <ApplicationVersion>$(Version)</ApplicationVersion>
     <Product>S4CASTools</Product>
-    <AssemblyVersion>$(CAS_TOOLS_VERSION)</AssemblyVersion>
-    <FileVersion>$(CAS_TOOLS_VERSION)</FileVersion>
+    <AssemblyVersion>$(Version)</AssemblyVersion>
+    <FileVersion>$(Version)</FileVersion>
     <NeutralLanguage>en</NeutralLanguage>
     <Description></Description>
     <Copyright>Copyright ©  2014</Copyright>
     <DefineConstants>$(DefineConstants);NETCORE</DefineConstants>
+    <PathMap>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)'))=./</PathMap>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
@@ -94,4 +96,12 @@
     <Compile Remove="Form1.designer - Copy.cs"/>
     <Compile Remove="Previewer.cs"/>
   </ItemGroup>
+
+  <Target Name="ZipOutputPath" AfterTargets="Publish">
+    <Exec Command="echo '$(PublishDir)'" />
+    <ZipDirectory
+            SourceDirectory="$(PublishDir)"
+            Overwrite="true"
+            DestinationFile="$(MSBuildProjectDirectory)\..\..\release\S4SCASTools_$(Version_).zip" />
+  </Target>
 </Project>

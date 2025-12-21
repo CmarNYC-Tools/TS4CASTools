@@ -1,49 +1,18 @@
 {
     "version": "2.0.0",
-    "options": {
-        "env": {
-            "CAS_TOOLS_VERSION":"3.8.2.8"
-        }
-    },
     "tasks": [
         {
             "label": "buildn",
-            "options": { "statusbar": {"hide": true}},
-            "command": "dotnet",
             "type": "shell",
-            "args": [
-                "build",
-                "${workspaceFolder}/src/CASTools/S4CASTools.NET.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary",
-                "-f:net6.0-windows",
-            ],
-            "problemMatcher": "$msCompile"
-        },
-        {
-            "label": "build",
             "options": { "statusbar": {"hide": true}},
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "build",
-                "${workspaceFolder}/src/CASTools/S4CASTools.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
-            ],
+            "command": "set -a;source ./build.env; dotnet build ./src/CASTools/S4CASTools.NET.csproj /property:GenerateFullPaths=true /consoleloggerparameters:NoSummary -f:net6.0-windows",
             "problemMatcher": "$msCompile"
         },
         {
             "label": "publish",
             "options": { "statusbar": {"hide": false}},
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "publish",
-                "${workspaceFolder}/src/CASTools/S4CASTools.NET.csproj",
-                "-c:Release",
-                "-f:net6.0-windows"
-            ],
+            "type": "shell",
+            "command": "./release.sh",
             "problemMatcher": "$msCompile"
         },
         {
