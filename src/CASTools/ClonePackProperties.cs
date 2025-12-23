@@ -1915,7 +1915,7 @@ namespace XMODS
                 foreach (IResourceIndexEntry ires in rcasps)
                 {
                     CASP casp = new CASP(new BinaryReader(pack.GetResource(ires)));
-                    if (casp.BodyType == XmodsEnums.BodyType.HairColor || !HairColorRestrict_checkBox.Checked)
+                    if (casp.BodyType == XmodsEnums.BodyType.HairColor || casp.BodyType == XmodsEnums.BodyType.Hair || !HairColorRestrict_checkBox.Checked)
                     {
                         tgis.Add(new TGI(ires.ResourceType, ires.ResourceGroup, ires.Instance));
                     }
