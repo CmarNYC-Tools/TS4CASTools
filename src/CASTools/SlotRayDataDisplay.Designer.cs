@@ -121,8 +121,8 @@
             // 
             // SlotRayDataDisplay
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            //this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            //this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1345, 333);
             this.Controls.Add(this.SlotRay_dataGridView);
             this.Margin = new System.Windows.Forms.Padding(2);

@@ -18,9 +18,9 @@ namespace XMODS
         {
             Debug.WriteLine("Starting app");
             #if NETCORE
-            // Application.SetDefaultFont(new Font(new FontFamily("Microsoft Sans Serif"), 12f));
+             Application.SetDefaultFont(new Font(new FontFamily("Microsoft Sans Serif"), 8f));
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-            Application.SetHighDpiMode(HighDpiMode.DpiUnaware);
+            // Application.SetHighDpiMode(HighDpiMode.DpiUnaware);
             #endif
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(true);

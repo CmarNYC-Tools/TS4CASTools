@@ -102,8 +102,8 @@
             // 
             // MeshMultipartConversionForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            //this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            //this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(565, 329);
             this.Controls.Add(this.MeshMultipartCancel_button);
             this.Controls.Add(this.MeshMultipartGo_button);
