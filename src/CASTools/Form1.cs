@@ -940,20 +940,32 @@ namespace XMODS
             {
                 List<string> pathsSim = new List<string>(Directory.GetFiles(TS4FilesPath, "Simulation*Build0.package", SearchOption.AllDirectories));
                 List<string> pathsClient = new List<string>(Directory.GetFiles(TS4FilesPath, "Client*Build0.package", SearchOption.AllDirectories));
-                
-                if(Path.GetFileName(TS4FilesPath) == "Contents"){
-                var appPath = Path.GetDirectoryName(Path.GetDirectoryName(TS4FilesPath));
-                    var packs = Path.Combine(appPath, "The Sims 4 Packs");
-                    if(Directory.Exists(packs)){
-                    pathsSim.AddRange(Directory.GetFiles(packs, "Simulation*Build*.package", SearchOption.AllDirectories));
-                    pathsClient.AddRange(Directory.GetFiles(packs, "Client*Build*.package", SearchOption.AllDirectories));
-                }
-                
+                List<string> pathsPreload = new List<string>(Directory.GetFiles(TS4FilesPath, "*Preload.package", SearchOption.AllDirectories));
+
+                if (Path.GetFileName(TS4FilesPath) == "Contents")
+                {
+                    var appPath = Path.GetDirectoryName(Path.GetDirectoryName(TS4FilesPath));
+                    if (appPath != null)
+                    {
+                        var packs = Path.Combine(appPath, "The Sims 4 Packs");
+                        if (Directory.Exists(packs))
+                        {
+                            pathsSim.AddRange(Directory.GetFiles(packs, "Simulation*Build*.package",
+                                SearchOption.AllDirectories));
+                            pathsClient.AddRange(Directory.GetFiles(packs, "Client*Build*.package",
+                                SearchOption.AllDirectories));
+                            pathsPreload.AddRange(Directory.GetFiles(packs, "*Preload.package",
+                                SearchOption.AllDirectories));
+                        }
+
+                    }
                 }
                 pathsSim.Sort();
                 pathsClient.Sort();
+                pathsPreload.Sort();
                 paths0.AddRange(pathsSim);
                 paths0.AddRange(pathsClient);
+                paths0.AddRange(pathsPreload);
             }
             catch (DirectoryNotFoundException e)
             {
