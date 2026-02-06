@@ -18,6 +18,7 @@ EP17 Life & Death
 EP18 Businesses & Hobbies
 EP19 Enchanted by Nature
 EP20 Adventure Awaits
+EP21 Royalty & Legacy
 GP01 Outdoor Retreat
 GP02 Spa Day
 GP03 Dine Out
@@ -102,6 +103,10 @@ SP71 Grange Mudroom
 SP72 Essential Glam
 SP73 Modern Retreat
 SP74 Garden to Table
+SP75 Wonderland Playroom
+SP76 Silver Screen Style
+SP77 Tea Time Solarium
 SP81 Prairie Dreams
+SP82 Yard Charm
 FP01 Holiday Celebration Pack
 FP02 Grims Ghoulish Guitar Pack

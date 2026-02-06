@@ -119,10 +119,11 @@ namespace Xmods.DataLib
         byte emissionIndex;   // added in version 0x1d, for alien glow 
         byte blendGeometryIndex;        // added in version 0x2A
         byte colorShiftMaskIndex;   // added in version 0x31, for masking color shifts
+        byte newImageIndex; // added in version 0x34
         byte IGTcount;        // Resource reference table in I64GT format (not TGI64)
                               // --repeat(count)
         TGI[] IGTtable;
-        public const uint currentVersion = 0x33;
+        public const uint currentVersion = 0x34;
 
         public bool UpdateToLatestVersion()
         {
@@ -200,6 +201,10 @@ namespace Xmods.DataLib
             if(this.version < 0x31)
             {
                 colorShiftMaskIndex = (byte)this.EmptyLink;
+            }
+            if(this.version < 0x34)
+            {
+                this.newImageIndex = (byte)this.EmptyLink;
             }
             if(this.version < 0x32){
                 layerID = 0;
@@ -840,6 +845,11 @@ namespace Xmods.DataLib
             get { if (this.version >= 0x31) { return this.colorShiftMaskIndex; } else { return (byte)this.EmptyLink; } }
             set { this.colorShiftMaskIndex = (byte)value; }
         }
+        public byte NewImageIndex
+        {
+            get { if (this.version >= 0x34) { return this.newImageIndex; } else { return (byte)this.EmptyLink; } }
+            set { this.newImageIndex = (byte)value; }
+        }
 
         public void RemoveSpecular()
         {
@@ -857,6 +867,11 @@ namespace Xmods.DataLib
             this.RebuildLinkList();
         }
 
+        public void RemoveNewImage()
+        {
+            this.newImageIndex = RemoveKey(this.newImageIndex);
+            this.RebuildLinkList();
+        }
         public uint OutfitID
         {
             get { return this.outfitID; }
@@ -1056,6 +1071,9 @@ namespace Xmods.DataLib
             if(version >= 0x31){
                 colorShiftMaskIndex = br.ReadByte();
             }
+            if(version >= 0x34){
+                newImageIndex = br.ReadByte();
+            }
             IGTcount = br.ReadByte();
             IGTtable = new TGI[IGTcount];
             for (int i = 0; i < IGTcount; i++)
@@ -1211,6 +1229,9 @@ namespace Xmods.DataLib
             }
             if(version >= 0x31){
                 bw.Write(colorShiftMaskIndex);
+            }
+            if(version >= 0x34){
+                bw.Write(this.newImageIndex);
             }
             long tablePos = bw.BaseStream.Position;
             bw.BaseStream.Position = offsetPos;
@@ -1594,6 +1615,7 @@ namespace Xmods.DataLib
             this.specularIndex = AddLink(this.specularIndex, newLinks);
             this.emissionIndex = AddLink(this.emissionIndex, newLinks);
             this.colorShiftMaskIndex = AddLink(this.colorShiftMaskIndex, newLinks);
+            this.newImageIndex = AddLink(this.newImageIndex, newLinks);
             this.IGTtable = newLinks.ToArray();
         }
 

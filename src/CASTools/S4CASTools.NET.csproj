@@ -22,7 +22,7 @@
     <ApplicationIcon>iconwhite2.ico</ApplicationIcon>
     <ApplicationRevision>0</ApplicationRevision>
     <Company></Company>
-    <Version>3.8.2.9</Version>
+    <Version>3.8.2.10</Version>
     <Version_>$(Version.Replace(".","_"))</Version_>
     <ApplicationDisplayVersion>$(Version)</ApplicationDisplayVersion>
     <ApplicationVersion>$(Version)</ApplicationVersion>
